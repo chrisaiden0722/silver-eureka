@@ -1,4 +1,5 @@
-IEnumerator ShootRequest()
+if requests_per_second > 10:
+    flag_player()IEnumerator ShootRequest()
 {
     WWWForm form = new WWWForm();
     form.AddField("player_id", playerId);
