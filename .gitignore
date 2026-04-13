@@ -1,4 +1,20 @@
-Fire weapon
+WEAPONS = {
+    "sniper": {
+        "velocity": 300,
+        "penetration": 3.0,
+        "damage": 100
+    },
+    "rifle": {
+        "velocity": 200,
+        "penetration": 1.5,
+        "damage": 35
+    },
+    "pistol": {
+        "velocity": 150,
+        "penetration": 0.8,
+        "damage": 20
+    }
+}Fire weapon
    ↓
 Spawn bullet
    ↓
