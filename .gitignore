@@ -1,4 +1,14 @@
-def apply_damage(base_damage, bone):
+def lag_compensated_hit(shooter, target, shot_time):
+    past_state = rewind_player(target, shot_time)
+
+    bone = check_bone_hit(
+        shooter.position,
+        shooter.direction,
+        past_state
+    )
+
+    if bone:
+        return apply_damage(50, bone)def apply_damage(base_damage, bone):
     multiplier = BONE_MULTIPLIERS.get(bone, 1.0)
     return base_damage * multiplierdef check_bone_hit(ray_origin, ray_dir, player):
     for bone_name, hitbox in player.hitbox.bones.items():
