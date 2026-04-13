@@ -1,4 +1,4 @@
-recoil.ApplyRecoil();using UnityEngine;
+recoil.ResetRecoil();recoil.ApplyRecoil();using UnityEngine;
 
 public class Recoil : MonoBehaviour
 {
