@@ -1,4 +1,19 @@
-from fastapi import FastAPI, Request
+from fastapi import Request
+
+BLOCKED_IPS = set()
+
+def verify_request(request: Request):
+
+    ip = request.client.host
+
+    if ip in BLOCKED_IPS:
+        return False
+
+    # basic header validation
+    if "user-agent" not in request.headers:
+        return False
+
+    return Truefrom fastapi import FastAPI, Request
 from app.gateway.router import route_request
 from app.gateway.security import verify_request
 
