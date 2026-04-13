@@ -1,4 +1,9 @@
-events = []
+{
+  "type": "kill",
+  "player": 12,
+  "weapon": "rifle",
+  "time": 34.2
+}events = []
 
 def log_event(event):
     events.append(event)bans = {}
