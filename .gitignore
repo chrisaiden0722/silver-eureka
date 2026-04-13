@@ -1,4 +1,14 @@
-http://ARGOCD_SERVERsyncPolicy:
+Developer pushes code
+        ↓
+GitHub updates repo
+        ↓
+ArgoCD detects change
+        ↓
+Pulls new config
+        ↓
+Kubernetes updates services
+        ↓
+Game backend updates livehttp://ARGOCD_SERVERsyncPolicy:
   automated:
     prune: true
     selfHeal: truegit push origin maindocker build
