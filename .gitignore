@@ -56,4 +56,22 @@ public class MenuController : MonoBehaviour
     {
         Application.Quit();
     }
+}using UnityEngine;
+using UnityEngine.UI;
+
+public class LoginUI : MonoBehaviour
+{
+    public InputField usernameInput;
+    public InputField passwordInput;
+    public APIManager api;
+
+    public void Login()
+    {
+        api.Login(usernameInput.text, passwordInput.text);
+    }
+
+    public void Signup()
+    {
+        api.Signup(usernameInput.text, passwordInput.text);
+    }
 }
