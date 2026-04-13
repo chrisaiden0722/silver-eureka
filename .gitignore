@@ -1,4 +1,23 @@
-fps-multiplayer-backendPlayer → CDN → API Gateway → Services Mesh → Game Server →
+fps-multiplayer-backend/
+│
+├── app/
+│   ├── main.py
+│   ├── config.py
+│   │
+│   ├── auth.py
+│   ├── matchmaking.py
+│   ├── game.py
+│   ├── anti_cheat.py
+│   ├── leaderboard.py
+│   │
+│   ├── models.py
+│   └── utils.py
+│
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+├── README.md
+└── .envfps-multiplayer-backendPlayer → CDN → API Gateway → Services Mesh → Game Server →
 Anti-Cheat → Event Bus → Database → Analytics → Live Ops Dashboardname: Deploy
 
 on:
