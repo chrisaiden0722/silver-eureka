@@ -1,4 +1,11 @@
-Match ID → Server Instancedef update_trust(player, report=False, cheat_flag=False):
+def evaluate_player(player):
+    if player.trust_score < 30:
+        return "shadow_ban"
+
+    if player.trust_score < 60:
+        return "restricted_queue"
+
+    return "normal_queue"Match ID → Server Instancedef update_trust(player, report=False, cheat_flag=False):
     if cheat_flag:
         player.trust_score -= 25
     elif report:
