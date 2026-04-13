@@ -1,4 +1,8 @@
-using UnityEngine;
+for (int i = 0; i < 8; i++)
+{
+    Vector3 spread = fpsCam.transform.forward + Random.insideUnitSphere * 0.1f;
+    Physics.Raycast(fpsCam.transform.position, spread, out hit, range);
+}using UnityEngine;
 
 public class WeaponSwitch : MonoBehaviour
 {
