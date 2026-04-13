@@ -1,4 +1,10 @@
-def find_match(player, queue):
+def update_trust(player, report=False, cheat_flag=False):
+    if cheat_flag:
+        player.trust_score -= 25
+    elif report:
+        player.trust_score -= 5
+    else:
+        player.trust_score += 1def find_match(player, queue):
     for opponent in queue:
         if abs(player.mmr - opponent.mmr) < 150:
             return (player, opponent)
