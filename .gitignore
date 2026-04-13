@@ -1,4 +1,4 @@
-def generate_bracket(players):
+leaderboard = sorted(players, key=lambda p: p.mmr, reverse=True)def generate_bracket(players):
     import random
     random.shuffle(players)
     return [(players[i], players[i+1]) for i in range(0, len(players), 2)]parties = {}
