@@ -1,4 +1,11 @@
-limiter = Limiter(key_func=get_key)def get_key(request: Request):
+def validate_payload(data: dict):
+    if not isinstance(data, dict):
+        return False
+
+    if len(str(data)) > 1000:
+        return False
+
+    return Truelimiter = Limiter(key_func=get_key)def get_key(request: Request):
     ip = get_remote_address(request)
     return f"{ip}"@app.post("/game/action")
 def game_action(player_id: str, action: str):
