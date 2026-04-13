@@ -1,4 +1,20 @@
-from fastapi import FastAPI, WebSocket
+from fastapi import FastAPI
+
+app = FastAPI()
+
+flags = {}
+
+def flag(player, reason):
+    flags[player] = flags.get(player, 0) + 1
+
+    if flags[player] > 5:
+        return {"ban": True}
+
+    return {"ban": False}
+
+@app.post("/analyze")
+def analyze(player_id: str, event: str):
+    return flag(player_id, event)from fastapi import FastAPI, WebSocket
 
 app = FastAPI()
 
