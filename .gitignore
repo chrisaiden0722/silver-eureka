@@ -1,4 +1,10 @@
-Client
+app/
+  gateway/
+    main.py
+    auth_middleware.py
+    rate_limiter.py
+    router.py
+    security.pyClient
   ↓
 API Gateway (SECURE ENTRY POINT)
   ↓
