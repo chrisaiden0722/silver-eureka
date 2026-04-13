@@ -1,4 +1,12 @@
-if can_flag(player_id):
+[ Unity Client ]
+      ↓
+[ WebSocket Gateway ]
+      ↓
+[ Game Server (Authoritative) ]
+      ↓
+[ Anti-Cheat Microservice ]
+      ↓
+[ Replay + Analytics System ]if can_flag(player_id):
     flag_player(player_id, "speed_hack")last_flag_time = {}
 
 def can_flag(player_id):
