@@ -1,4 +1,11 @@
-HEAD
+BONE_MULTIPLIERS = {
+    "HEAD": 2.5,
+    "NECK": 1.8,
+    "CHEST": 1.0,
+    "STOMACH": 0.9,
+    "ARM": 0.6,
+    "LEG": 0.5
+}HEAD
 NECK
 CHEST
 STOMACH
