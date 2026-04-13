@@ -1,4 +1,5 @@
-Global PostgreSQL (or DynamoDB)
+def global_leaderboard(all_regions):
+    return sorted(all_regions, key=lambda p: p["mmr"], reverse=True)Global PostgreSQL (or DynamoDB)
 
 + replicated read regions
 + single write authority OR conflict resolutionNA Cluster → NA Ranked Ladder
