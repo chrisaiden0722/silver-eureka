@@ -1,4 +1,14 @@
-def detect_abuse(ip):
+Client Request
+   ↓
+API Gateway
+   ├── Rate Limit Check
+   ├── Auth Validation
+   ├── Abuse Detection
+   ├── Logging
+   ↓
+Service Router
+   ↓
+Microservicesdef detect_abuse(ip):
 
     if ip in BLOCKED_IPS:
         return True
