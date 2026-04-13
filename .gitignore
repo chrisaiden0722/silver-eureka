@@ -1,4 +1,4 @@
-using Mirror;
+attacker.GetComponent<PlayerXP>()?.AddXP(100);using Mirror;
 using UnityEngine;
 
 public class PlayerXP : NetworkBehaviour
