@@ -1,4 +1,6 @@
-ws.Send(JsonUtility.ToJson(new {
+Game Server → sends events → Anti-Cheat Service
+                              ↓
+                      Flags / Bans / Logsws.Send(JsonUtility.ToJson(new {
     type = "move",
     pos = transform.position,
     player_id = id
