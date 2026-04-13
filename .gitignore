@@ -1,4 +1,29 @@
-using Mirror;
+using System.Collections;
+
+[Server]
+IEnumerator Respawn()
+{
+    yield return new WaitForSeconds(3f);
+
+    health = 100;
+
+    Transform spawn = NetworkManager.singleton.GetStartPosition();
+    transform.position = spawn.position;
+
+    RpcRespawn();
+}
+
+[ClientRpc]
+void RpcDie()
+{
+    gameObject.SetActive(false);
+}
+
+[ClientRpc]
+void RpcRespawn()
+{
+    gameObject.SetActive(true);
+}using Mirror;
 using UnityEngine;
 
 public class PlayerStats : NetworkBehaviour
