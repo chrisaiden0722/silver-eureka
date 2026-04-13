@@ -1,4 +1,14 @@
-Replay = re-run server logic exactlydef record_tick(game_state):
+def run_replay(replay_data):
+
+    state = init_world()
+
+    for frame in replay_data:
+
+        apply_inputs(state, frame.inputs)
+        simulate_tick(state)
+        apply_events(state, frame.events)
+
+        render_frame(state)Replay = re-run server logic exactlydef record_tick(game_state):
     replay_buffer.append(
         compress(game_state)
     )4move, aim, shoot, jump, reloadGame Server (authoritative)
