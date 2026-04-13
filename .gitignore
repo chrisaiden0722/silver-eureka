@@ -1,4 +1,5 @@
-last_flag_time = {}
+if can_flag(player_id):
+    flag_player(player_id, "speed_hack")last_flag_time = {}
 
 def can_flag(player_id):
     now = time.time()
