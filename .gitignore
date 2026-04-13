@@ -1,4 +1,8 @@
-if player.cheat_score > threshold:
+Game Server (fast path)
+   ↓ events only
+Anti-Cheat Service (slow async path)
+   ↓ analysis results
+Ban / Flag systemif player.cheat_score > threshold:
     send_to_deep_analysis(player.match_id)def analyze_match(replay_data):
     detect_aimbot_patterns()
     simulate shot accuracy curves
