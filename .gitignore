@@ -2,6 +2,16 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+tournaments = {}
+
+@app.post("/create")
+def create(name: str):
+    tid = len(tournaments) + 1
+    tournaments[tid] = {"players": []}
+    return {"tournament_id": tid}from fastapi import FastAPI
+
+app = FastAPI()
+
 flags = {}
 
 def flag(player, reason):
