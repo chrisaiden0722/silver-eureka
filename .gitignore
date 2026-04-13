@@ -1,4 +1,13 @@
-Bullet moves each tickShoot → instant hit checkdef check_hit(shooter, target, shot_time):
+Client Input Packet:
+  move, shoot, aim
+
+→ Server validates
+
+→ Server simulates tick
+
+→ Server sends state update
+
+→ Client rendersBullet moves each tickShoot → instant hit checkdef check_hit(shooter, target, shot_time):
     past_state = rewind(target, shot_time)
 
     if bullet_intersects(past_state.hitbox):
