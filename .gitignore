@@ -1,4 +1,17 @@
-# Gradle files
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GameUI : MonoBehaviour
+{
+    public Text scoreText;
+    int score = 0;
+
+    public void AddScore()
+    {
+        score++;
+        scoreText.text = "Score: " + score;
+    }
+}# Gradle files
 .gradle/
 build/
 
