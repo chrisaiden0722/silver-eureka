@@ -1,4 +1,8 @@
-Queue → MMR Match → Dedicated Server → Replay Logged → Rank Updated → Leaderboard Updatedif player_ping < 80:
+1. Tournament Lobby System
+2. Bracket Engine (Knockout / Double Elim)
+3. Spectator Mode
+4. Match Replays + Broadcast Feed
+5. Season & Rewards SystemQueue → MMR Match → Dedicated Server → Replay Logged → Rank Updated → Leaderboard Updatedif player_ping < 80:
     assign_region("NA")leaderboard = sorted(players, key=lambda p: p.mmr, reverse=True)replay_buffer = []
 
 def log(event):
