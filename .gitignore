@@ -1,4 +1,5 @@
-if (health <= 0)
+item.GetComponent<Text>().text =
+    "<color=green>" + killer + "</color> 🔫 <color=red>" + victim + "</color>";if (health <= 0)
 {
     string killerName = attacker.name;
     string victimName = gameObject.name;
