@@ -1,4 +1,41 @@
-using Mirror;
+using UnityEngine;
+
+public class Recoil : MonoBehaviour
+{
+    public Vector2[] recoilPattern;
+    public float recoilSpeed = 10f;
+    public float returnSpeed = 5f;
+
+    private int currentShot = 0;
+    private Vector2 currentRecoil;
+    private Vector2 targetRecoil;
+
+    void Update()
+    {
+        // Apply recoil smoothly
+        currentRecoil = Vector2.Lerp(currentRecoil, targetRecoil, Time.deltaTime * recoilSpeed);
+
+        // Return to center when not shooting
+        targetRecoil = Vector2.Lerp(targetRecoil, Vector2.zero, Time.deltaTime * returnSpeed);
+
+        // Apply to camera
+        transform.localRotation = Quaternion.Euler(-currentRecoil.y, currentRecoil.x, 0f);
+    }
+
+    public void ApplyRecoil()
+    {
+        if (currentShot < recoilPattern.Length)
+        {
+            targetRecoil += recoilPattern[currentShot];
+            currentShot++;
+        }
+    }
+
+    public void ResetRecoil()
+    {
+        currentShot = 0;
+    }
+}using Mirror;
 using UnityEngine;
 
 public class PlayerNetwork : NetworkBehaviour
