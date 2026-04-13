@@ -1,4 +1,6 @@
-[ Unity Client ]
+1. Game Server Layer (real-time matches)
+2. Competitive Platform Layer (rank, matchmaking, tournaments)
+3. Integrity Layer (anti-cheat + replay + trust scoring)[ Unity Client ]
       ↓
 [ Matchmaking / Tournament API ]
       ↓
