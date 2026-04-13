@@ -1,4 +1,5 @@
-/analyze_event
+def flag_player(player_id, reason):
+    print(f"FLAG: {player_id} - {reason}")/analyze_event
 /flag_player
 /ban_player
 /get_trust_score/analyze_event
