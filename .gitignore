@@ -1,4 +1,19 @@
-item.GetComponent<Text>().text =
+IEnumerator RemoveAfterTime(GameObject obj, float time)
+{
+    yield return new WaitForSeconds(time - 1f);
+
+    CanvasGroup cg = obj.AddComponent<CanvasGroup>();
+
+    float t = 0;
+    while (t < 1)
+    {
+        t += Time.deltaTime;
+        cg.alpha = 1 - t;
+        yield return null;
+    }
+
+    Destroy(obj);
+}item.GetComponent<Text>().text =
     "<color=green>" + killer + "</color> 🔫 <color=red>" + victim + "</color>";if (health <= 0)
 {
     string killerName = attacker.name;
