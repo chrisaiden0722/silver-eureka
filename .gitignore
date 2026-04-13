@@ -1,4 +1,11 @@
-[ Unity Client ]
+class Player:
+    def __init__(self, id):
+        self.id = id
+        self.mmr = 1000
+        self.rank = "Silver"
+        self.trust_score = 100
+        self.wins = 0
+        self.losses = 0[ Unity Client ]
                         ↓
               Secure API Gateway
                         ↓
