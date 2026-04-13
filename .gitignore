@@ -1,4 +1,6 @@
-TICK_RATE = 60
+def predict_movement(input, state):
+    state.position += input.direction * state.speed
+    return stateTICK_RATE = 60
 TICK_TIME = 1 / TICK_RATE
 
 while True:
