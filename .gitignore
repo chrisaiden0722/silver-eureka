@@ -1,4 +1,6 @@
-version: "3"
+Login → Auth Service → Matchmaking Queue → Game Server Instance →
+Real-time WebSocket Gameplay → Anti-Cheat Analysis →
+Replay Logging → MMR Update → Leaderboard Updateversion: "3"
 
 services:
   gateway:
