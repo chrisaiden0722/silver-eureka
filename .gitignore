@@ -1,4 +1,22 @@
-Player connects
+GitHub
+  ↓
+ArgoCD (GitOps)
+  ↓
+Multi-region Kubernetes (NA/EU/ASIA)
+  ↓
+Game Server Pods
+  ↓
+Tick Engine (60–128Hz)
+  ↓
+Physics System (bullets + penetration)
+  ↓
+Bone Hit System
+  ↓
+Lag Compensation
+  ↓
+Network Sync Layer
+  ↓
+PlayersPlayer connects
    ↓
 Geo routing selects region
    ↓
