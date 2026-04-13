@@ -1,4 +1,4 @@
-TICK_RATE = 60
+player = {x: 100, y: 200, health: 90}TICK_RATE = 60
 TICK_TIME = 1 / TICK_RATE
 
 def game_loop():
