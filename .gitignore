@@ -1,4 +1,14 @@
-if now - last_shot_time < weapon_fire_rate:
+IEnumerator ShootRequest()
+{
+    WWWForm form = new WWWForm();
+    form.AddField("player_id", playerId);
+    form.AddField("match_id", matchId);
+
+    UnityWebRequest req = UnityWebRequest.Post(server + "/shoot", form);
+    yield return req.SendWebRequest();
+
+    Debug.Log(req.downloadHandler.text);
+}if now - last_shot_time < weapon_fire_rate:
     reject_action()def validate_move(old_pos, new_pos):
     if distance(old_pos, new_pos) > 10:
         return False  # speed hack detected
