@@ -1,4 +1,11 @@
-@app.post("/join_tournament")
+def generate_bracket(players):
+    import random
+    random.shuffle(players)
+
+    return [
+        (players[i], players[i+1])
+        for i in range(0, len(players), 2)
+    ]@app.post("/join_tournament")
 def join(tournament_id: str, player_id: str):
     t = tournaments[tournament_id]
 
