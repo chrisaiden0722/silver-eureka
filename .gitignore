@@ -1,4 +1,14 @@
-Client Input
+Client
+  ↓
+WebSocket (binary packets)
+  ↓
+Server UDP-like layer
+  ├── sequence tracking
+  ├── packet compression
+  ├── delta sync
+  ├── state reconciliation
+  ↓
+Game Tick System (60/s)Client Input
    ↓
 Server Tick (60/s)
    ↓
