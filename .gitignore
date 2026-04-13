@@ -1,4 +1,19 @@
-Game Pod:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fps-game-server
+spec:
+  replicas: 10
+  template:
+    spec:
+      containers:
+      - name: game-server
+        image: fps/game-server:latest
+        env:
+        - name: REGION
+          value: "NA"
+        - name: TICK_RATE
+          value: "60"Game Pod:
   - physics engine
   - bullet simulation
   - hit detection
