@@ -1,4 +1,29 @@
-1. Game Server Layer (real-time matches)
+[ Unity Client ]
+                        ↓
+              Secure API Gateway
+                        ↓
+ ┌─────────────────────────────────────────┐
+ │        COMPETITIVE PLATFORM CORE        │
+ │-----------------------------------------│
+ │  Matchmaking (ELO/MMR)                  │
+ │  Party System                           │
+ │  Lobbies & Queues                       │
+ │  Tournament Engine                      │
+ │  Leaderboards                           │
+ │  Player Accounts                        │
+ └─────────────────────────────────────────┘
+                        ↓
+ ┌─────────────────────────────────────────┐
+ │          GAME SERVER LAYER              │
+ │  (Dedicated Match Instances)            │
+ └─────────────────────────────────────────┘
+                        ↓
+ ┌─────────────────────────────────────────┐
+ │        INTEGRITY SYSTEM (ANTI-CHEAT)    │
+ │  Replay verification                    │
+ │  Behavior detection                     │
+ │  Ban / trust scoring                    │
+ └─────────────────────────────────────────┘1. Game Server Layer (real-time matches)
 2. Competitive Platform Layer (rank, matchmaking, tournaments)
 3. Integrity Layer (anti-cheat + replay + trust scoring)[ Unity Client ]
       ↓
