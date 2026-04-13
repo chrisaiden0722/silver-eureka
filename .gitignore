@@ -1,4 +1,6 @@
-def global_leaderboard(all_regions):
+NA → AntiCheat Hub
+EU → AntiCheat Hub
+ASIA → AntiCheat Hubdef global_leaderboard(all_regions):
     return sorted(all_regions, key=lambda p: p["mmr"], reverse=True)Global PostgreSQL (or DynamoDB)
 
 + replicated read regions
