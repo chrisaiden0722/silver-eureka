@@ -1,4 +1,4 @@
-- player inputs
+Unity Client → Secure API Gateway → Backend Services- player inputs
 - server decisions
 - timestampsleaderboard = sorted(players, key=lambda p: p.mmr, reverse=True)def generate_bracket(players):
     import random
