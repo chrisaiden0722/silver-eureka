@@ -1,4 +1,4 @@
-def update_trust(player, report=False, cheat_flag=False):
+Match ID → Server Instancedef update_trust(player, report=False, cheat_flag=False):
     if cheat_flag:
         player.trust_score -= 25
     elif report:
