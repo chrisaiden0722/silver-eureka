@@ -1,5 +1,25 @@
 using UnityEngine;
 
+public class Target : MonoBehaviour
+{
+    public float health = 100f;
+
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+
+        if (health <= 0f)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+}using UnityEngine;
+
 public class Gun : MonoBehaviour
 {
     public float damage = 25f;
