@@ -1,4 +1,5 @@
 DATABASE_URL=postgresql://user:pass@localhost:5432/fps
+JWT_SECRET=supersecretDATABASE_URL=postgresql://user:pass@localhost:5432/fps
 JWT_SECRET=supersecretfastapi
 uvicorn
 websocketsversion: "3.9"
