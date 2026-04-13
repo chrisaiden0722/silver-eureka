@@ -1,4 +1,9 @@
-using UnityEngine;
+[ClientRpc]
+void RpcShowKillFeed(string killerName, string victimName)
+{
+    FindObjectOfType<KillFeedManager>()
+        .ShowKill(killerName, victimName);
+}using UnityEngine;
 using System.Collections;
 
 public class KillFeedManager : MonoBehaviour
