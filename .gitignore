@@ -1,4 +1,6 @@
-apiVersion: autoscaling/v2
+NA → AWS us-east-1
+EU → AWS eu-west-1
+ASIA → AWS ap-southeast-1apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: game-server-hpa
