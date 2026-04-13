@@ -1,4 +1,6 @@
-def run_replay(replay_data):
+NA match → NA replay shard
+EU match → EU replay shard
+ASIA match → ASIA replay sharddef run_replay(replay_data):
 
     state = init_world()
 
