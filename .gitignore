@@ -1,4 +1,55 @@
-public float recoilAmount = 2f;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class EnemyAI : MonoBehaviour
+{
+    public Transform player;
+    public float health = 100f;
+
+    public float attackRange = 20f;
+    public float fireRate = 1f;
+    float nextFireTime = 0f;
+
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+
+    NavMeshAgent agent;
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+    void Update()
+    {
+        float distance = Vector3.Distance(player.position, transform.position);
+
+        if (distance > attackRange)
+        {
+            agent.SetDestination(player.position);
+        }
+        else
+        {
+            agent.ResetPath();
+            transform.LookAt(player);
+
+            if (Time.time >= nextFireTime)
+            {
+                nextFireTime = Time.time + 1f / fireRate;
+                Shoot();
+            }
+        }
+    }
+
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    }
+
+    public void TakeDamage(float dmg)
+    {
+        health -= dmg;
+        if (health <= 0fpublic float recoilAmount = 2f;
 
 void Shoot()
 {
