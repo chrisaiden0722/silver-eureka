@@ -1,4 +1,8 @@
-if packet.type == "shoot":
+ack_store = set()
+
+def send_packet(packet):
+    if packet.id not in ack_store:
+        resend(packet)if packet.type == "shoot":
     require_ack = Truedef reconcile(client_state, server_state):
     error = distance(client_state, server_state)
 
@@ -2580,4 +2584,8 @@ def save_event(match_id, event):
         "dx": current["x"] - prev["x"],
         "dy": current["y"] - prev["y"],
         "dh": current["health"] - prev["health"]
-    }
+    }ack_store = set()
+
+def send_packet(packet):
+    if packet.id not in ack_store:
+        resend(packet)
