@@ -1,4 +1,5 @@
-def reconcile(client_state, server_state):
+if packet.type == "shoot":
+    require_ack = Truedef reconcile(client_state, server_state):
     error = distance(client_state, server_state)
 
     if error > threshold:
