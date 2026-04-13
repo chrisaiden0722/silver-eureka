@@ -1,4 +1,4 @@
-def record_tick(game_state):
+Replay = re-run server logic exactlydef record_tick(game_state):
     replay_buffer.append(
         compress(game_state)
     )4move, aim, shoot, jump, reloadGame Server (authoritative)
