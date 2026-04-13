@@ -1,4 +1,6 @@
-async def route_request(path: str, body: dict):
+def validate_token(token: str):
+
+    return token is not None and token.startswith("jwt_")async def route_request(path: str, body: dict):
 
     for prefix, service_url in SERVICES.items():
 
