@@ -1,4 +1,4 @@
-FAST LAYER → real-time checks (cheap)
+inputs + tick states + events = perfect replayFAST LAYER → real-time checks (cheap)
 BEHAVIOR LAYER → scoring system (medium cost)
 ANALYSIS LAYER → async deep inspection (heavy, isolated)suspect_event
    ↓
