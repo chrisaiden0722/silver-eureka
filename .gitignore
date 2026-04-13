@@ -1,4 +1,10 @@
-GitHub → ArgoCD watches repo → auto sync → Kubernetes updates automaticallyDeveloper → kubectl apply → cluster updatesClient → AWS Load Balancer → Kubernetes (EKS)
+GitHub Repo
+            ↓
+     ArgoCD (GitOps Engine)
+            ↓
+ Kubernetes Cluster (EKS)
+            ↓
+ Auth | Matchmaking | Game | AntiCheatGitHub → ArgoCD watches repo → auto sync → Kubernetes updates automaticallyDeveloper → kubectl apply → cluster updatesClient → AWS Load Balancer → Kubernetes (EKS)
       → Auth / Matchmaking / Game Servers
       → Redis / Database
       → Monitoring StackTerraform Apply
