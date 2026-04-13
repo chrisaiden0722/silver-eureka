@@ -1,4 +1,4 @@
-docker-compose up --build# FPS Multiplayer Backend
+http://localhost:8000docker-compose up --build# FPS Multiplayer Backend
 
 ## Features
 - Authentication system
