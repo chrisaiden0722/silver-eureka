@@ -1,4 +1,11 @@
-using UnityEngine;
+[ Background: blurred battlefield ]
+
+        GAME TITLE
+
+   ▶ PLAY
+   🧑 LOADOUT
+   📡 MULTIPLAYER
+   ⚙ SETTINGSusing UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 
