@@ -1,4 +1,26 @@
-@app.post("/shoot")
+def server_ray_cast(player_id, direction, match):
+    """
+    Server determines if shot is valid.
+    """
+
+    shooter_pos = match["players"][player_id]["pos"]
+
+    for pid, pdata in match["players"].items():
+        if pid == player_id:
+            continue
+
+        target_pos = pdata["pos"]
+
+        distance = get_distance(shooter_pos, target_pos)
+
+        if distance < 50:  # weapon range check
+            return {
+                "hit": True,
+                "victim": pid,
+                "damage": 25
+            }
+
+    return {"hit": False}@app.post("/shoot")
 def shoot(player_id: int, match_id: int, direction: list):
     match = matches.get(match_id)
 
