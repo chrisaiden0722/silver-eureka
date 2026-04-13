@@ -1,4 +1,14 @@
-terraform applyPlayer
+Terraform Stack:
+
+AWS Provider
+  ├── VPC (network)
+  ├── Subnets (public/private)
+  ├── EKS Cluster (Kubernetes)
+  ├── Node Groups (game servers)
+  ├── IAM Roles (security)
+  ├── Load Balancer (ALB)
+  ├── Security Groups (firewall rules)
+  └── ECR (Docker registry)terraform applyPlayer
  ↓
 AWS API Gateway (security + rate limit)
  ↓
