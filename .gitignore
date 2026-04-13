@@ -1,4 +1,6 @@
-public AudioSource clickSound;
+Package Name: com.yourname.yourgame
+Version: 1.0
+Version Code: 1public AudioSource clickSound;
 
 public void PlayClick()
 {
