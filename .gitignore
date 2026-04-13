@@ -3,6 +3,11 @@
   "event": "kill",
   "killer": 1,
   "victim": 3
+}{
+  "time": 12.5,
+  "event": "kill",
+  "killer": 1,
+  "victim": 3
 }match_stream = []
 
 def log_event(event):
