@@ -1,4 +1,12 @@
-config = {
+active_matches = {}
+
+@app.post("/match/start")
+def start_match(match_id: str):
+    active_matches[match_id] = {
+        "status": "running",
+        "players": []
+    }
+    return active_matches[match_id]config = {
     "weapon_damage": {
         "sniper": 95,
         "rifle": 30
