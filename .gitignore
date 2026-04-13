@@ -1,5 +1,11 @@
 recoilPattern = new Vector2[]
 {
+    new Vector2(0.2f, 0.3f),
+    new Vector2(-0.3f, 0.4f),
+    new Vector2(0.4f, 0.5f),
+    new Vector2(-0.4f, 0.6f)
+};recoilPattern = new Vector2[]
+{
     new Vector2(0.1f, 0.5f),
     new Vector2(-0.1f, 0.6f),
     new Vector2(0.15f, 0.7f),
