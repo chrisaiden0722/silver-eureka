@@ -1,4 +1,19 @@
-import time
+version: "3"
+
+services:
+  gateway:
+    build: ./gateway
+    ports:
+      - "8000:8000"
+
+  matchmaking:
+    build: ./services/matchmaking_service
+
+  game:
+    build: ./services/game_service
+
+  anti_cheat:
+    build: ./services/anti_cheat_serviceimport time
 
 requests = {}
 
