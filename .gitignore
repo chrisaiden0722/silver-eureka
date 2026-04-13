@@ -1,4 +1,12 @@
-def validate_payload(data: dict):
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # lock this in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)def validate_payload(data: dict):
     if not isinstance(data, dict):
         return False
 
