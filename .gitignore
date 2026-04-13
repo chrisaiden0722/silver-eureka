@@ -1,4 +1,7 @@
-4move, aim, shoot, jump, reloadGame Server (authoritative)
+def record_tick(game_state):
+    replay_buffer.append(
+        compress(game_state)
+    )4move, aim, shoot, jump, reloadGame Server (authoritative)
       ↓
 Event Recorder
       ↓
