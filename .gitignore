@@ -1,5 +1,18 @@
 from fastapi import FastAPI
 
+app = FastAPI()
+
+users = {}
+
+@app.post("/register")
+def register(username: str):
+    users[username] = {"mmr": 1000, "banned": False}
+    return {"status": "created"}
+
+@app.post("/login")
+def login(username: str):
+    return {"token": f"fake-jwt-{username}"}from fastapi import FastAPI
+
 app = FastAPI(title="FPS Platform Gateway")
 
 @app.get("/health")
