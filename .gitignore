@@ -1,4 +1,24 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket
+
+app = FastAPI()
+
+matches = {}
+
+@app.websocket("/ws/{match_id}")
+async def game(ws: WebSocket, match_id: str):
+    await ws.accept()
+
+    while True:
+        data = await ws.receive_json()
+
+        # SERVER AUTHORITY LOGIC
+        if data["type"] == "move":
+            pass  # validate movement here
+
+        if data["type"] == "shoot":
+            pass  # validate hits here
+
+        await ws.send_json({"status": "ok"})from fastapi import FastAPI
 from collections import deque
 
 app = FastAPI()
