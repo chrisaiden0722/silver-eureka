@@ -1,4 +1,10 @@
-BONE_MULTIPLIERS = {
+class PlayerHitbox:
+    def __init__(self):
+        self.bones = {
+            "HEAD": Sphere(center=(0,1.8,0), radius=0.25),
+            "CHEST": Capsule(start=(0,1.2,0), end=(0,1.6,0), radius=0.4),
+            "LEGS": Capsule(start=(0,0.0,0), end=(0,1.0,0), radius=0.35)
+        }BONE_MULTIPLIERS = {
     "HEAD": 2.5,
     "NECK": 1.8,
     "CHEST": 1.0,
