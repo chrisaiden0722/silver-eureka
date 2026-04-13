@@ -1,4 +1,8 @@
-ack_store = set()
+Server sends:
+t = 100ms, t = 120ms
+
+Client renders:
+t = 80ms (slightly in past)ack_store = set()
 
 def send_packet(packet):
     if packet.id not in ack_store:
