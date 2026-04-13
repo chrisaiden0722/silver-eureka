@@ -1,4 +1,5 @@
-def get_relevant_state(player):
+Client: I moved forward
+Server: confirms 120ms laterdef get_relevant_state(player):
     return {
         "nearby_players": [],
         "bullets": [],
