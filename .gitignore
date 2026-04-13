@@ -1,4 +1,13 @@
-from fastapi import APIRouter
+from collections import deque
+
+queue = deque()
+
+def add_player(player):
+    queue.append(player)
+
+def match_players():
+    if len(queue) >= 2:
+        return (queue.popleft(), queue.popleft())from fastapi import APIRouter
 
 router = APIRouter()
 
