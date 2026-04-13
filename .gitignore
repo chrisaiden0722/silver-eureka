@@ -1,4 +1,7 @@
-parties = {}
+def generate_bracket(players):
+    import random
+    random.shuffle(players)
+    return [(players[i], players[i+1]) for i in range(0, len(players), 2)]parties = {}
 
 def create_party(player_id):
     party_id = len(parties) + 1
