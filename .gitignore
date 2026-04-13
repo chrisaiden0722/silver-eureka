@@ -1,4 +1,4 @@
-Game Server (fast path)
+abs(player.velocity) > max_allowedGame Server (fast path)
    ↓ events only
 Anti-Cheat Service (slow async path)
    ↓ analysis results
