@@ -1,4 +1,7 @@
-bans = {}
+events = []
+
+def log_event(event):
+    events.append(event)bans = {}
 
 @app.post("/ban")
 def ban(player_id: str, reason: str):
