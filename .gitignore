@@ -1,4 +1,10 @@
-resource "aws_iam_role" "eks_role" {
+resource "aws_lb" "api" {
+  name               = "fps-alb"
+  internal           = false
+  load_balancer_type = "application"
+
+  subnets = module.vpc.public_subnets
+}resource "aws_iam_role" "eks_role" {
   name = "fps-eks-role"
 
   assume_role_policy = jsonencode({
