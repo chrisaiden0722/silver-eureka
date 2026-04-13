@@ -1,4 +1,13 @@
-banned_players = set()
+last_flag_time = {}
+
+def can_flag(player_id):
+    now = time.time()
+
+    if player_id in last_flag_time and now - last_flag_time[player_id] < 1:
+        return False
+
+    last_flag_time[player_id] = now
+    return Truebanned_players = set()
 
 def ban_player(player_id, reason):
     banned_players.add(player_id)
