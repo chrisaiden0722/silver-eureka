@@ -1,4 +1,28 @@
-class Player:
+version: "3.9"
+
+services:
+  gateway:
+    build: ./apps/gateway
+    ports:
+      - "8000:8000"
+
+  auth:
+    build: ./apps/auth_service
+
+  matchmaking:
+    build: ./apps/matchmaking_service
+
+  game:
+    build: ./apps/game_service
+
+  anti_cheat:
+    build: ./apps/anti_cheat_service
+
+  tournament:
+    build: ./apps/tournament_service
+
+  leaderboard:
+    build: ./apps/leaderboard_serviceclass Player:
     def __init__(self, id):
         self.id = id
         self.mmr = 1000
