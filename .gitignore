@@ -1,4 +1,30 @@
-[ Unity Client ]
+import time
+import math
+
+player_states = {}
+
+MAX_SPEED = 12.0  # units/sec
+
+def check_speed(player_id, new_pos):
+    now = time.time()
+
+    if player_id not in player_states:
+        player_states[player_id] = (new_pos, now)
+        return True
+
+    old_pos, old_time = player_states[player_id]
+    dt = now - old_time
+
+    dist = math.dist(old_pos, new_pos)
+    speed = dist / dt if dt > 0 else 0
+
+    player_states[player_id] = (new_pos, now)
+
+    if speed > MAX_SPEED:
+        flag(player_id, "speed_hack")
+        return False
+
+    return True[ Unity Client ]
       ↓
 [ WebSocket Gateway ]
       ↓
