@@ -1,4 +1,10 @@
-def detect_desync(client_state, server_state):
+replay_buffer = []
+
+def log(event):
+    replay_buffer.append({
+        "t": time.time(),
+        "event": event
+    })def detect_desync(client_state, server_state):
     diff = abs(client_state - server_state)
 
     if diff > threshold:
