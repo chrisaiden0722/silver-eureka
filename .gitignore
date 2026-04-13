@@ -1,4 +1,6 @@
-http://localhost:8000docker-compose up --build# FPS Multiplayer Backend
+slowapi
+redis
+python-dotenvhttp://localhost:8000docker-compose up --build# FPS Multiplayer Backend
 
 ## Features
 - Authentication system
