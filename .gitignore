@@ -1,4 +1,16 @@
-Git Push
+Player
+ ↓
+GeoDNS Routing
+ ↓
+Nearest Region Cluster
+ ↓
+Matchmaking Service
+ ↓
+Game Server (regional)
+ ↓
+Anti-Cheat + Leaderboard Sync
+ ↓
+Global Analytics LayerGit Push
    ↓
 ArgoCD Control Plane
    ↓
