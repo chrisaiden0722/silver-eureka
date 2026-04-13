@@ -1,4 +1,13 @@
-GitHub (Source of Truth)
+class GameServer:
+    def __init__(self):
+        self.tick_rate = 60
+        self.players = []
+        self.bullets = []
+
+        self.physics = BulletPhysicsSystem()
+        self.hitbox = BoneHitSystem()
+        self.net = NetSyncSystem()
+        self.lag = LagCompSystem()GitHub (Source of Truth)
                                ↓
                          ArgoCD (GitOps)
                                ↓
