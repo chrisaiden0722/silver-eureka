@@ -1,4 +1,4 @@
-ARMOR_MULTIPLIER = {
+damage = base × bone × armorARMOR_MULTIPLIER = {
     "HEAD": 0.8,
     "CHEST": 0.7,
     "LEGS": 1.0
