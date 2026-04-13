@@ -1,4 +1,34 @@
-if (!Input.GetButton("Fire1"))
+using Mirror;
+using UnityEngine;
+
+public class PlayerStats : NetworkBehaviour
+{
+    [SyncVar] public int kills = 0;
+    [SyncVar] public int deaths = 0;
+
+    [SyncVar] public int health = 100;
+
+    public void TakeDamage(int dmg, NetworkIdentity attacker)
+    {
+        if (!isServer) return;
+
+        health -= dmg;
+
+        if (health <= 0)
+        {
+            RpcDie();
+
+            PlayerStats attackerStats = attacker.GetComponent<PlayerStats>();
+            if (attackerStats != null)
+            {
+                attackerStats.kills++;
+            }
+
+            deaths++;
+            StartCoroutine(Respawn());
+        }
+    }
+}if (!Input.GetButton("Fire1"))
 {
     recoil.ResetRecoil();
 }Vector3 direction = fpsCam.transform.forward;
