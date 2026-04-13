@@ -1,4 +1,22 @@
-from fastapi import Request
+import time
+from collections import defaultdict
+
+requests = defaultdict(list)
+
+def rate_limit(ip: str):
+
+    now = time.time()
+
+    requests[ip].append(now)
+
+    # keep last 10 seconds
+    requests[ip] = [t for t in requests[ip] if now - t < 10]
+
+    if len(requests[ip]) > 30:
+        BLOCKED_IPS.add(ip)
+        return False
+
+    return Truefrom fastapi import Request
 
 BLOCKED_IPS = set()
 
