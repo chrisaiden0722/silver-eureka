@@ -1,4 +1,12 @@
-NA → AntiCheat Hub
+Git Push
+   ↓
+ArgoCD Control Plane
+   ↓
+Deploy to NA Cluster
+Deploy to EU Cluster
+Deploy to ASIA Cluster
+   ↓
+Players auto-routed by regionNA → AntiCheat Hub
 EU → AntiCheat Hub
 ASIA → AntiCheat Hubdef global_leaderboard(all_regions):
     return sorted(all_regions, key=lambda p: p["mmr"], reverse=True)Global PostgreSQL (or DynamoDB)
