@@ -1,4 +1,4 @@
-Client shoots
+Bullet travels → loses energy → penetrates materials → may hit multiple targetsClient shoots
    ↓
 Server receives shot packet
    ↓
