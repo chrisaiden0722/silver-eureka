@@ -1,4 +1,24 @@
-for (int i = 0; i < 8; i++)
+using UnityEngine;
+
+public class ADS : MonoBehaviour
+{
+    public Camera cam;
+    public float normalFOV = 60f;
+    public float zoomFOV = 30f;
+    public float speed = 10f;
+
+    void Update()
+    {
+        if (Input.GetButton("Fire2")) // Right click / aim
+        {
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, zoomFOV, Time.deltaTime * speed);
+        }
+        else
+        {
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, normalFOV, Time.deltaTime * speed);
+        }
+    }
+}for (int i = 0; i < 8; i++)
 {
     Vector3 spread = fpsCam.transform.forward + Random.insideUnitSphere * 0.1f;
     Physics.Raycast(fpsCam.transform.position, spread, out hit, range);
