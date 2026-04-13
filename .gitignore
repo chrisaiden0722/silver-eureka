@@ -1,4 +1,15 @@
-GitHub Repo
+infra/
+  k8s/
+    base/
+      auth.yaml
+      matchmaking.yaml
+      game.yaml
+      anti-cheat.yaml
+    ingress.yaml
+
+gitops/
+  applications/
+    fps-platform.yamlGitHub Repo
             ↓
      ArgoCD (GitOps Engine)
             ↓
