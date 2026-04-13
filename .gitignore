@@ -1,4 +1,10 @@
-fps-platform-backend/
+from fastapi import FastAPI
+
+app = FastAPI(title="FPS Platform Gateway")
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}fps-platform-backend/
 │
 ├── apps/
 │   ├── gateway/
