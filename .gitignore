@@ -1,4 +1,8 @@
-def assign_region(player_ping):
+Game Pod:
+  - physics engine
+  - bullet simulation
+  - hit detection
+  - networking layerdef assign_region(player_ping):
 
     if player_ping < 80:
         return "NA"
