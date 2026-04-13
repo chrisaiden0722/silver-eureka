@@ -1,4 +1,9 @@
-class PacketState:
+from collections import deque
+
+input_buffer = deque(maxlen=10)
+
+def receive_input(packet):
+    input_buffer.append(packet)class PacketState:
     def __init__(self):
         self.last_seq = 0
 
