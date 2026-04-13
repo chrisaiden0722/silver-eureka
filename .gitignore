@@ -1,4 +1,9 @@
-fpsCam.transform.localRotation *= Quaternion.Euler(-2f, 0f, 0f);recoilPattern = new Vector2[]
+Vector3 direction = fpsCam.transform.forward;
+direction += new Vector3(
+    Random.Range(-spread, spread),
+    Random.Range(-spread, spread),
+    0
+);fpsCam.transform.localRotation *= Quaternion.Euler(-2f, 0f, 0f);recoilPattern = new Vector2[]
 {
     new Vector2(0.5f, 1.0f)
 };recoilPattern = new Vector2[]
