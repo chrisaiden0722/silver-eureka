@@ -1,4 +1,19 @@
-[ClientRpc]
+if (health <= 0)
+{
+    string killerName = attacker.name;
+    string victimName = gameObject.name;
+
+    RpcShowKillFeed(killerName, victimName);
+
+    PlayerStats attackerStats = attacker.GetComponent<PlayerStats>();
+    if (attackerStats != null)
+    {
+        attackerStats.kills++;
+    }
+
+    deaths++;
+    StartCoroutine(Respawn());
+}[ClientRpc]
 void RpcShowKillFeed(string killerName, string victimName)
 {
     FindObjectOfType<KillFeedManager>()
