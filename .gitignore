@@ -1,4 +1,4 @@
-NA → AWS us-east-1
+Match #12345 → Docker Container → Auto-destroy after match endsNA → AWS us-east-1
 EU → AWS eu-west-1
 ASIA → AWS ap-southeast-1apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
