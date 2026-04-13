@@ -1,4 +1,10 @@
-class Player:
+def find_match(player, queue):
+    for opponent in queue:
+        if abs(player.mmr - opponent.mmr) < 150:
+            return (player, opponent)
+
+    queue.append(player)
+    return Noneclass Player:
     def __init__(self, id):
         self.id = id
         self.mmr = 1000
