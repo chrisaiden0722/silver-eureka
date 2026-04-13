@@ -1,4 +1,6 @@
-resource "aws_lb" "api" {
+resource "aws_ecr_repository" "game_service" {
+  name = "game-service"
+}resource "aws_lb" "api" {
   name               = "fps-alb"
   internal           = false
   load_balancer_type = "application"
