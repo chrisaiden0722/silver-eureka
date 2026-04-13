@@ -1,4 +1,28 @@
-https://github.com/MirrorNetworking/Mirror.gitusing UnityEngine;
+using Mirror;
+using UnityEngine;
+
+public class PlayerNetwork : NetworkBehaviour
+{
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+
+    void Update()
+    {
+        if (!isLocalPlayer) return;
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            CmdShoot();
+        }
+    }
+
+    [Command]
+    void CmdShoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        NetworkServer.Spawn(bullet);
+    }
+}https://github.com/MirrorNetworking/Mirror.gitusing UnityEngine;
 
 public class ADS : MonoBehaviour
 {
