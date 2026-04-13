@@ -1,4 +1,14 @@
-apiVersion: autoscaling/v2
+Player
+ ↓
+AWS API Gateway (security + rate limit)
+ ↓
+AWS Load Balancer
+ ↓
+Kubernetes Ingress (routing)
+ ↓
+Microservices (auth, game, matchmaking)
+ ↓
+Database / Redis / LogsapiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: game-service-hpa
