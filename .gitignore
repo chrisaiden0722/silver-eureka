@@ -1,4 +1,5 @@
-def analyze_match(replay_data):
+if player.cheat_score > threshold:
+    send_to_deep_analysis(player.match_id)def analyze_match(replay_data):
     detect_aimbot_patterns()
     simulate shot accuracy curves
     compare human-like varianceGame Server → sends events → Anti-cheat worker queueif player.cheat_score > 100:
