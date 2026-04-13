@@ -1,4 +1,18 @@
-def damage_falloff(damage, material):
+Fire weapon
+   ↓
+Spawn bullet
+   ↓
+Move each tick
+   ↓
+Check wall collision
+   ↓
+Apply penetration loss
+   ↓
+Check player hit
+   ↓
+Apply damage
+   ↓
+Repeat until energy = 0def damage_falloff(damage, material):
     return damage * (1 - MATERIALS[material]["resistance"])def can_penetrate(material, bullet):
     return bullet.penetration > MATERIALS[material]["thickness"]def process_bullet(bullet, players):
     for player in players:
