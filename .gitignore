@@ -1,4 +1,14 @@
-from fastapi import FastAPI
+config = {
+    "weapon_damage": {
+        "sniper": 95,
+        "rifle": 30
+    },
+    "match_time": 600
+}
+
+@app.get("/config")
+def get_config():
+    return configfrom fastapi import FastAPI
 
 app = FastAPI()
 
