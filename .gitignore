@@ -1,4 +1,9 @@
-def evaluate_player(player):
+parties = {}
+
+def create_party(player_id):
+    party_id = len(parties) + 1
+    parties[party_id] = [player_id]
+    return party_iddef evaluate_player(player):
     if player.trust_score < 30:
         return "shadow_ban"
 
