@@ -1,4 +1,26 @@
-“I fired weapon”
+@app.post("/shoot")
+def shoot(player_id: int, match_id: int, direction: list):
+    match = matches.get(match_id)
+
+    if not match:
+        return {"error": "invalid match"}
+
+    # server decides hit detection
+    result = server_ray_cast(player_id, direction, match)
+
+    if result["hit"]:
+        victim = result["victim"]
+
+        match["players"][victim]["hp"] -= result["damage"]
+
+        if match["players"][victim]["hp"] <= 0:
+            return {
+                "kill": True,
+                "killer": player_id,
+                "victim": victim
+            }
+
+    return {"hit": result["hit"]}“I fired weapon”
 “I moved here”“I hit player, -50 HP”
 “I got 10 kills”
 “I have 999 score”MATCHMAKER SERVICE
