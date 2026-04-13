@@ -1,4 +1,13 @@
-class Player:
+import time
+
+requests = {}
+
+def rate_limit(player_id):
+    now = time.time()
+    if player_id in requests and now - requests[player_id] < 1:
+        return False
+    requests[player_id] = now
+    return Trueclass Player:
     def __init__(self, id):
         self.id = id
         self.mmr = 1000
