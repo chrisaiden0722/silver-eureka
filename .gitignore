@@ -1,4 +1,9 @@
-active_matches = {}
+bans = {}
+
+@app.post("/ban")
+def ban(player_id: str, reason: str):
+    bans[player_id] = reason
+    return {"banned": True}active_matches = {}
 
 @app.post("/match/start")
 def start_match(match_id: str):
