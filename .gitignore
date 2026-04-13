@@ -1,4 +1,4 @@
-class PlayerHitbox:
+Bullet ray → intersects bone hitboxesclass PlayerHitbox:
     def __init__(self):
         self.bones = {
             "HEAD": Sphere(center=(0,1.8,0), radius=0.25),
