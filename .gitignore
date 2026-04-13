@@ -1,4 +1,6 @@
-api.fps-game.com
+argo-na
+argo-eu
+argo-asiaapi.fps-game.com
    ↓
 Route 53 decides regioneksctl create cluster --name fps-na
 eksctl create cluster --name fps-eu
