@@ -1,4 +1,22 @@
-gitops/
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fps-na
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/YOUR_REPO
+    targetRevision: main
+    path: infra/k8s/base
+
+  destination:
+    server: https://NA_K8S_API_SERVER
+    namespace: fps-na
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: truegitops/
   clusters/
     na/
       application.yaml
