@@ -1,4 +1,23 @@
-1. Tournament Lobby System
+from fastapi import FastAPI
+import uuid
+
+app = FastAPI()
+
+tournaments = {}
+
+@app.post("/create_tournament")
+def create_tournament(name: str, max_players: int):
+    tid = str(uuid.uuid4())
+
+    tournaments[tid] = {
+        "name": name,
+        "players": [],
+        "max_players": max_players,
+        "bracket": None,
+        "status": "registering"
+    }
+
+    return {"tournament_id": tid}1. Tournament Lobby System
 2. Bracket Engine (Knockout / Double Elim)
 3. Spectator Mode
 4. Match Replays + Broadcast Feed
