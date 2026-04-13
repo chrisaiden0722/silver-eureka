@@ -1,4 +1,9 @@
-def verify_request(request):
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+def log_request(request):
+    logging.info(f"{request.client.host} → {request.url}")def verify_request(request):
 
     token = request.headers.get("authorization")
 
