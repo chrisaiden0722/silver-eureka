@@ -1,4 +1,20 @@
 from fastapi import FastAPI
+from collections import deque
+
+app = FastAPI()
+queue = deque()
+
+@app.post("/queue")
+def join_queue(player_id: str):
+    queue.append(player_id)
+
+    if len(queue) >= 2:
+        return {
+            "match": [queue.popleft(), queue.popleft()],
+            "status": "ready"
+        }
+
+    return {"status": "waiting"}from fastapi import FastAPI
 
 app = FastAPI()
 
