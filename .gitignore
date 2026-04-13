@@ -1,4 +1,7 @@
-players = []
+def create_bracket(players):
+    import random
+    random.shuffle(players)
+    return [(players[i], players[i+1]) for i in range(0, len(players), 2)]players = []
 
 def update_leaderboard():
     return sorted(players, key=lambda p: p["mmr"], reverse=True)def flag_player(player_id, reason):
