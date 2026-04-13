@@ -1,4 +1,10 @@
-Player Location → DNS → Nearest Region Clusterspec:
+def select_region(player_ping):
+    if player_ping < 80:
+        return "NA"
+    elif player_ping < 150:
+        return "EU"
+    else:
+        return "ASIA"Player Location → DNS → Nearest Region Clusterspec:
   destination:
     server: https://ASIA_K8S_API_SERVER
     namespace: fps-asiaspec:
