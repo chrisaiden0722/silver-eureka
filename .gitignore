@@ -1,4 +1,11 @@
-Which bone was hit?
+HEAD
+NECK
+CHEST
+STOMACH
+LEFT_ARM
+RIGHT_ARM
+LEFT_LEG
+RIGHT_LEGWhich bone was hit?
 → head / chest / arm / leg
 → apply damage multiplierClient Input
    ↓ (compressed binary packet)
