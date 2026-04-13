@@ -1,4 +1,12 @@
-Terraform Stack:
+infra/
+  terraform/
+    main.tf
+    vpc.tf
+    eks.tf
+    iam.tf
+    alb.tf
+    variables.tf
+    outputs.tfTerraform Stack:
 
 AWS Provider
   ├── VPC (network)
