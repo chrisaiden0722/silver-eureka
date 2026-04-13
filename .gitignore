@@ -1,4 +1,10 @@
-if requests_per_second > 10:
+cheat_flags = {}
+
+def flag_player(player_id):
+    cheat_flags[player_id] = cheat_flags.get(player_id, 0) + 1
+
+    if cheat_flags[player_id] > 5:
+        ban_player(player_id)if requests_per_second > 10:
     flag_player()IEnumerator ShootRequest()
 {
     WWWForm form = new WWWForm();
