@@ -1,4 +1,8 @@
-def update_bullets(bullets, dt):
+WOOD    → low resistance
+GLASS   → very low resistance
+METAL   → high resistance
+CONCRETE→ very high resistance
+ARMOR   → special resistancedef update_bullets(bullets, dt):
     for bullet in bullets:
 
         bullet.pos += bullet.dir * bullet.velocity * dt
