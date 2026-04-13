@@ -1,4 +1,6 @@
-Single Kubernetes Cluster (BAD for global FPS)Player → AWS Load Balancer → Kubernetes → Services
+NA Cluster   → North America players
+EU Cluster   → Europe players
+ASIA Cluster → Asia playersSingle Kubernetes Cluster (BAD for global FPS)Player → AWS Load Balancer → Kubernetes → Services
                            ↑
                         ArgoCD
                     (auto updates everything)Developer pushes code
