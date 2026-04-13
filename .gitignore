@@ -1,4 +1,18 @@
-import random
+reaction_times = {}
+
+def track_reaction(player_id, shot_time, target_seen_time):
+    rt = shot_time - target_seen_time
+
+    if player_id not in reaction_times:
+        reaction_times[player_id] = []
+
+    reaction_times[player_id].append(rt)
+
+    avg_rt = sum(reaction_times[player_id][-20:]) / len(reaction_times[player_id][-20:])
+
+    # human limit ~180-250ms average
+    if avg_rt < 0.08:
+        flag(player_id, "impossible_reaction_time")import random
 
 aim_history = {}
 
