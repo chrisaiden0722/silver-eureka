@@ -1,4 +1,4 @@
-angle_change_per_ms > human_limitabs(player.velocity) > max_allowedGame Server (fast path)
+reaction_time < 80ms repeatedlyangle_change_per_ms > human_limitabs(player.velocity) > max_allowedGame Server (fast path)
    ↓ events only
 Anti-Cheat Service (slow async path)
    ↓ analysis results
