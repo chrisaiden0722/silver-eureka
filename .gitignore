@@ -1,4 +1,16 @@
-import httpx
+async def route_request(path: str, body: dict):
+
+    for prefix, service_url in SERVICES.items():
+
+        if path.startswith(prefix):
+
+            async with httpx.AsyncClient() as client:
+                return await client.post(
+                    f"{service_url}{path}",
+                    json=body
+                )
+
+    return {"error": "service not found"}import httpx
 
 SERVICES = {
     "/auth": "http://auth-service:8001",
