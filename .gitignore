@@ -1,4 +1,8 @@
-def process_shots():
+ARMOR_MULTIPLIER = {
+    "HEAD": 0.8,
+    "CHEST": 0.7,
+    "LEGS": 1.0
+}def process_shots():
     for shot in pending_shots:
 
         bone = check_bone_hit(
