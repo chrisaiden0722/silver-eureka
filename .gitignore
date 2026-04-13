@@ -1,6 +1,9 @@
 events_schedule = {
     "double_xp_weekend": True,
     "sniper_only_mode": False
+}events scheduled = {
+    "double_xp_weekend": True,
+    "sniper_only_mode": False
 }{
   "type": "kill",
   "player": 12,
