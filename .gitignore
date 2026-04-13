@@ -1,4 +1,8 @@
-Client Input Packet:
+snapshot = {
+    "players": [...],
+    "bullets": [...],
+    "time": server_tick
+}Client Input Packet:
   move, shoot, aim
 
 → Server validates
