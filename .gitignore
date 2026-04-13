@@ -1,4 +1,12 @@
-L1 flag → L2 score increase → L3 confirmation → banreaction_time < 80ms repeatedlyangle_change_per_ms > human_limitabs(player.velocity) > max_allowedGame Server (fast path)
+suspect_event
+   ↓
+increase_score
+   ↓
+queue_for_analysis
+   ↓
+confirm_pattern
+   ↓
+ban_or_clearL1 flag → L2 score increase → L3 confirmation → banreaction_time < 80ms repeatedlyangle_change_per_ms > human_limitabs(player.velocity) > max_allowedGame Server (fast path)
    ↓ events only
 Anti-Cheat Service (slow async path)
    ↓ analysis results
