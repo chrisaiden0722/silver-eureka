@@ -1,4 +1,23 @@
-apiVersion: argoproj.io/v1alpha1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: game-service
+  namespace: fps
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: game-service
+  template:
+    metadata:
+      labels:
+        app: game-service
+    spec:
+      containers:
+      - name: game-service
+        image: YOUR_ECR/game-service:latest
+        ports:
+        - containerPort: 8000apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: fps-platform
