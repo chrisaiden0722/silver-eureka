@@ -1,4 +1,7 @@
-def update_ranks(winner, loser):
+Match #12345
+→ Server Instance A
+→ 10 players
+→ isolated memory statedef update_ranks(winner, loser):
     winner.mmr += calculate_mmr_change(winner.mmr, loser.mmr)
     loser.mmr -= calculate_mmr_change(winner.mmr, loser.mmr)def update_ranks(winner, loser):
     winner.mmr += calculate_mmr_change(winner.mmr, loser.mmr)
