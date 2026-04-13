@@ -1,4 +1,5 @@
-leaderboard = sorted(players, key=lambda p: p.mmr, reverse=True)replay_buffer = []
+if player_ping < 80:
+    assign_region("NA")leaderboard = sorted(players, key=lambda p: p.mmr, reverse=True)replay_buffer = []
 
 def log(event):
     replay_buffer.append({
