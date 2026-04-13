@@ -17,7 +17,24 @@ module "vpc" {
     vpc.tf
     eks.tf
     iam.tf
-    alb.tf
+    alb.tfmodule "eks" {
+  source          = "terraform-aws-modules/eks/aws"
+  cluster_name    = "fps-cluster"
+  cluster_version  = "1.29"
+
+  vpc_id          = module.vpc.vpc_id
+  subnet_ids      = module.vpc.private_subnets
+
+  node_groups = {
+    game_nodes = {
+      desired_capacity = 2
+      max_capacity     = 10
+      min_capacity     = 2
+
+      instance_types = ["t3.medium"]
+    }
+  }
+}
     variables.tf
     outputs.tfTerraform Stack:
 
