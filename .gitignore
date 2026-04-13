@@ -1,4 +1,7 @@
-NA Cluster → NA Ranked Ladder
+Global PostgreSQL (or DynamoDB)
+
++ replicated read regions
++ single write authority OR conflict resolutionNA Cluster → NA Ranked Ladder
 EU Cluster → EU Ranked Ladder
 ASIA Cluster → ASIA Ranked Ladderdef select_region(player_ping):
     if player_ping < 80:
