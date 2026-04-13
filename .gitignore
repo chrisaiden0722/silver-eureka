@@ -1,4 +1,5 @@
-player.cheat_score += 1 if suspicious_event else 0
+if player.cheat_score > 100:
+    flag_for_review(player)player.cheat_score += 1 if suspicious_event else 0
 player.cheat_score *= 0.99  # decaydef fast_checks(player):
     if player.speed > MAX_SPEED:
         return "FLAG_SPEED"
