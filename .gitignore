@@ -1,4 +1,12 @@
-[seq_id][timestamp][input_flags][x][y][angle]Client
+class PacketState:
+    def __init__(self):
+        self.last_seq = 0
+
+    def is_valid(self, seq):
+        if seq <= self.last_seq:
+            return False
+        self.last_seq = seq
+        return True[seq_id][timestamp][input_flags][x][y][angle]Client
   ↓
 WebSocket (binary packets)
   ↓
