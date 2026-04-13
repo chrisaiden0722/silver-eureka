@@ -1,4 +1,9 @@
-using System.Collections;
+Target target = hit.transform.GetComponent<Target>();
+
+if (target != null)
+{
+    target.TakeDamage(damage, GetComponent<NetworkIdentity>());
+}using System.Collections;
 
 [Server]
 IEnumerator Respawn()
