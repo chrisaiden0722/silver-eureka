@@ -1,4 +1,20 @@
-from fastapi import FastAPI
+[ Unity Client ]
+                 ↓
+        WebSocket Gateway Layer
+                 ↓
+        Matchmaking + Lobby Service
+                 ↓
+     Game Server (Authoritative Combat)
+                 ↓
+   ┌──────────────────────────────┐
+   │  Competitive Backend Core     │
+   │  - Rank / MMR System          │
+   │  - Anti-cheat service         │
+   │  - Replay system             │
+   │  - Stats & analytics         │
+   └──────────────────────────────┘
+                 ↓
+        Database + Leaderboardsfrom fastapi import FastAPI
 
 app = FastAPI()
 
