@@ -1,4 +1,7 @@
-Register → Bracket Generated → Matches Start → Winners Advance → Finals → Champion Crowneddef update_rank(mmr):
+import hashlib
+
+def sign_result(match_data):
+    return hashlib.sha256(str(match_data).encode()).hexdigest()Register → Bracket Generated → Matches Start → Winners Advance → Finals → Champion Crowneddef update_rank(mmr):
     if mmr < 1000:
         return "Silver"
     elif mmr < 1500:
