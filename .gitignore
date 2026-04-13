@@ -1,4 +1,17 @@
-def simulate_shot(shooter, target, time):
+GitHub (Source of Truth)
+                               ↓
+                         ArgoCD (GitOps)
+                               ↓
+        ┌────────────────────────────────────────┐
+        │     MULTI-REGION KUBERNETES CLUSTERS   │
+        ├──────────────┬──────────────┬──────────┤
+        │      NA      │      EU      │   ASIA    │
+        │              │              │           │
+        │ Game Server  │ Game Server  │ Game     │
+        │ Physics      │ Physics      │ Physics  │
+        │ Hit System   │ Hit System   │ Hit Sys  │
+        │ Matchmaking  │ Matchmaking  │ Match    │
+        └──────────────┴──────────────┴──────────┘def simulate_shot(shooter, target, time):
 
     state = rewind_world(time)
 
