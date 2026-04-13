@@ -1,4 +1,5 @@
-Unity Client → Secure API Gateway → Backend Services- player inputs
+Login → Trust Score Check → Queue → Matchmaking → Dedicated Server →
+Gameplay → Replay Logged → Integrity Check → MMR Update → Leaderboard UpdateUnity Client → Secure API Gateway → Backend Services- player inputs
 - server decisions
 - timestampsleaderboard = sorted(players, key=lambda p: p.mmr, reverse=True)def generate_bracket(players):
     import random
