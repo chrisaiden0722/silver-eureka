@@ -1,4 +1,4 @@
-Player → CDN → API Gateway → Services Mesh → Game Server →
+fps-multiplayer-backendPlayer → CDN → API Gateway → Services Mesh → Game Server →
 Anti-Cheat → Event Bus → Database → Analytics → Live Ops Dashboardname: Deploy
 
 on:
