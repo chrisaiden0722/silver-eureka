@@ -1,4 +1,7 @@
-yourgame.aabPackage Name: com.yourname.yourgame
+Initial release:
+- Multiplayer shooting
+- Matchmaking system
+- Leaderboardsyourgame.aabPackage Name: com.yourname.yourgame
 Version: 1.0
 Version Code: 1public AudioSource clickSound;
 
