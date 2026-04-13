@@ -1,4 +1,10 @@
-from collections import defaultdict
+@app.post("/game/action")
+def game_action(player_id: str, action: str):
+
+    if is_spamming(player_id):
+        return {"error": "spam detected"}
+
+    return {"status": "ok"}from collections import defaultdict
 import time
 
 request_log = defaultdict(list)
