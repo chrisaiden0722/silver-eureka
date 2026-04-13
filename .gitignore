@@ -32,3 +32,28 @@ google-services.json
 
 # Android Profiling
 *.hprof
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MenuController : MonoBehaviour
+{
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void OpenLogin()
+    {
+        SceneManager.LoadScene("LoginScene");
+    }
+
+    public void OpenLeaderboard()
+    {
+        SceneManager.LoadScene("LeaderboardScene");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+}
