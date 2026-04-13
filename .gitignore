@@ -1,5 +1,7 @@
 resource "aws_ecr_repository" "game_service" {
   name = "game-service"
+}resource "aws_ecr_repository" "game_service" {
+  name = "game-service"
 }resource "aws_lb" "api" {
   name               = "fps-alb"
   internal           = false
