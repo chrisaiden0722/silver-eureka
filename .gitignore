@@ -1,4 +1,6 @@
-@app.post("/game/action")
+def get_key(request: Request):
+    ip = get_remote_address(request)
+    return f"{ip}"@app.post("/game/action")
 def game_action(player_id: str, action: str):
 
     if is_spamming(player_id):
