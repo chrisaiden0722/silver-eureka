@@ -1,4 +1,12 @@
-POST /auth/login
+Namespace: fps-platform
+
+Deployments:
+  - auth-service
+  - matchmaking-service
+  - game-service
+  - anti-cheat-service
+  - leaderboard-service
+  - tournament-servicePOST /auth/login
 POST /matchmaking/join
 WS /game/socket
 GET /leaderboard┌──────────────────────┐
