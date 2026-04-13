@@ -1,4 +1,6 @@
-GitHub
+L1: Real-time lightweight checks (per tick, ultra fast)
+L2: Behavioral scoring (aggregated over time)
+L3: Offline deep analysis (async worker system)GitHub
   ↓
 ArgoCD (GitOps)
   ↓
