@@ -8,6 +8,16 @@ Kubernetes Ingress (routing)
  ↓
 Microservices (auth, game, matchmaking)
  ↓
+Database / Redis / LogsPlayer
+ ↓
+AWS API Gateway (security + rate limit)
+ ↓
+AWS Load Balancer
+ ↓
+Kubernetes Ingress (routing)
+ ↓
+Microservices (auth, game, matchmaking)
+ ↓
 Database / Redis / LogsapiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
