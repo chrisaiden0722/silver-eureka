@@ -1,4 +1,4 @@
-replay_buffer = []
+leaderboard = sorted(players, key=lambda p: p.mmr, reverse=True)replay_buffer = []
 
 def log(event):
     replay_buffer.append({
