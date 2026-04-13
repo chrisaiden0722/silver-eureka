@@ -1,4 +1,5 @@
-def process_bullet(bullet, players):
+def can_penetrate(material, bullet):
+    return bullet.penetration > MATERIALS[material]["thickness"]def process_bullet(bullet, players):
     for player in players:
 
         if hit_detected(bullet, player):
