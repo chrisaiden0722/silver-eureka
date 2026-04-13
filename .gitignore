@@ -1,4 +1,11 @@
-{ "event": "shoot", "player": 1, "pos": [10,2,5] }
+def verify_match(replay):
+    for event in replay:
+        if event["event"] == "move":
+            if not check_speed(event["player"], event["pos"]):
+                flag(event["player"], "replay_speed_violation")
+
+        if event["event"] == "shoot":
+            analyze_aim(event["player"], event.get("hit"), event.get("enemy_speed")){ "event": "shoot", "player": 1, "pos": [10,2,5] }
 { "event": "move", "player": 1, "pos": [11,2,5] }game_replay_log = []
 
 def log_event(event):
