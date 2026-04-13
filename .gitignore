@@ -1,4 +1,18 @@
-damage = base × bone × armorARMOR_MULTIPLIER = {
+Client shoots
+   ↓
+Server receives shot packet
+   ↓
+Rewind target player state
+   ↓
+Raycast against bone hitboxes
+   ↓
+Determine bone hit
+   ↓
+Apply multipliers (bone + armor)
+   ↓
+Update health
+   ↓
+Broadcast resultdamage = base × bone × armorARMOR_MULTIPLIER = {
     "HEAD": 0.8,
     "CHEST": 0.7,
     "LEGS": 1.0
