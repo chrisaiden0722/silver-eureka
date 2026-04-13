@@ -1,4 +1,11 @@
-from fastapi import FastAPI
+@app.post("/join_tournament")
+def join(tournament_id: str, player_id: str):
+    t = tournaments[tournament_id]
+
+    if len(t["players"]) < t["max_players"]:
+        t["players"].append(player_id)
+
+    return {"status": "joined"}from fastapi import FastAPI
 import uuid
 
 app = FastAPI()
