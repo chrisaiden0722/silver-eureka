@@ -1,4 +1,7 @@
-spectators = {}
+match_stream = []
+
+def log_event(event):
+    match_stream.append(event)spectators = {}
 
 @app.post("/spectate")
 def spectate(match_id: str, player_id: str):
