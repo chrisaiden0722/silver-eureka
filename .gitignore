@@ -1,4 +1,10 @@
-WEAPONS = {
+def simulate_shot(shooter, target, time):
+
+    state = rewind_world(time)
+
+    bullet = spawn_bullet(shooter)
+
+    return process_bullet(bullet, state.players)WEAPONS = {
     "sniper": {
         "velocity": 300,
         "penetration": 3.0,
