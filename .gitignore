@@ -1,4 +1,24 @@
 using UnityEngine;
+using UnityEngine.Networking;
+using System.Collections;
+
+public class LeaderboardUI : MonoBehaviour
+{
+    public string apiURL = "https://yourgame.onrender.com";
+
+    void Start()
+    {
+        StartCoroutine(GetLeaderboard());
+    }
+
+    IEnumerator GetLeaderboard()
+    {
+        UnityWebRequest www = UnityWebRequest.Get(apiURL + "/leaderboard");
+        yield return www.SendWebRequest();
+
+        Debug.Log(www.downloadHandler.text);
+    }
+}using UnityEngine;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
