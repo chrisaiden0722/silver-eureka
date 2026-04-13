@@ -1,4 +1,6 @@
-def select_region(player_ping):
+NA Cluster → NA Ranked Ladder
+EU Cluster → EU Ranked Ladder
+ASIA Cluster → ASIA Ranked Ladderdef select_region(player_ping):
     if player_ping < 80:
         return "NA"
     elif player_ping < 150:
