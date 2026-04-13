@@ -2,6 +2,14 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+players = {}
+
+@app.get("/leaderboard")
+def leaderboard():
+    return sorted(players.items(), key=lambda x: x[1], reverse=True)from fastapi import FastAPI
+
+app = FastAPI()
+
 tournaments = {}
 
 @app.post("/create")
