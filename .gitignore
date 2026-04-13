@@ -1,4 +1,6 @@
-apiVersion: apps/v1
+docker build
+docker push
+kubectl applyapiVersion: apps/v1
 kind: Deployment
 metadata:
   name: game-service
