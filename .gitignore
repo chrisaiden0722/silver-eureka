@@ -1,4 +1,31 @@
-import time
+import random
+
+aim_history = {}
+
+def analyze_aim(player_id, hit_location, target_movement):
+    """
+    hit_location: where player aimed
+    target_movement: how fast enemy was moving
+    """
+
+    if player_id not in aim_history:
+        aim_history[player_id] = []
+
+    aim_history[player_id].append({
+        "target_speed": target_movement,
+        "accuracy": hit_location
+    })
+
+    recent = aim_history[player_id][-20:]
+
+    perfect_hits = sum(1 for h in recent if h["accuracy"] == "head")
+    total = len(recent)
+
+    accuracy = perfect_hits / total if total > 0 else 0
+
+    # humans rarely sustain 90%+ headshot accuracy on moving targets
+    if accuracy > 0.85 and total >= 15:
+        flag(player_id, "aim_bot_suspected")import time
 import math
 
 player_states = {}
