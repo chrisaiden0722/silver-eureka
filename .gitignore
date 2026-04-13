@@ -1,4 +1,16 @@
-[ Admin Dashboard ]
+from fastapi import FastAPI
+
+app = FastAPI()
+
+flags = {
+    "double_xp": False,
+    "new_weapon": False,
+    "ranked_mode": True
+}
+
+@app.get("/flag/{name}")
+def get_flag(name: str):
+    return {"enabled": flags.get(name, False)}[ Admin Dashboard ]
                          ↓
         ┌────────────────────────────────┐
         │        LIVE OPS CORE           │
