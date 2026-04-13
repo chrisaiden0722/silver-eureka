@@ -1,4 +1,4 @@
-Player → AWS Load Balancer → Kubernetes → Services
+Single Kubernetes Cluster (BAD for global FPS)Player → AWS Load Balancer → Kubernetes → Services
                            ↑
                         ArgoCD
                     (auto updates everything)Developer pushes code
