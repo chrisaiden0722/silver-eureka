@@ -1,4 +1,7 @@
-git push origin maindocker build
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: truegit push origin maindocker build
 docker push
 kubectl applyapiVersion: apps/v1
 kind: Deployment
