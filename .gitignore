@@ -1,4 +1,7 @@
-┌──────────────────────┐
+POST /auth/login
+POST /matchmaking/join
+WS /game/socket
+GET /leaderboard┌──────────────────────┐
                 │   AWS API Gateway    │
                 │ (Auth + Rate Limit)  │
                 └─────────┬────────────┘
