@@ -1149,7 +1149,13 @@ public class LoginUI : MonoBehaviour
         api.Login(usernameInput.text, passwordInput.text);
     }
 
-    public void Signup()
+    public void Sigseasons = {
+    "season_1": {
+        "start": "2026-01",
+        "end": "2026-03",
+        "leaderboard": {}
+    }
+}nup()
     {
         api.Signup(usernameInput.text, passwordInput.text);
     }
