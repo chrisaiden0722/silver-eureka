@@ -1,4 +1,8 @@
-Match #12345
+def detect_desync(client_state, server_state):
+    diff = abs(client_state - server_state)
+
+    if diff > threshold:
+        flag_player("state_desync")Match #12345
 → Server Instance A
 → 10 players
 → isolated memory statedef update_ranks(winner, loser):
