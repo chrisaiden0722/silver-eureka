@@ -1,4 +1,4 @@
-snapshot = {
+render_time = current_time - 100mssnapshot = {
     "players": [...],
     "bullets": [...],
     "time": server_tick
