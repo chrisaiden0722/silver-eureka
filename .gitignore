@@ -1,4 +1,11 @@
-class Bullet:
+def update_bullets(bullets, dt):
+    for bullet in bullets:
+
+        bullet.pos += bullet.dir * bullet.velocity * dt
+        bullet.velocity *= 0.999  # air drag
+
+        if bullet.velocity < 1:
+            bullet.alive = Falseclass Bullet:
     def __init__(self, pos, dir, velocity, damage, penetration_power):
         self.pos = pos
         self.dir = dir
