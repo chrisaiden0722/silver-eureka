@@ -1,4 +1,19 @@
-from collections import deque
+TICK_RATE = 60
+TICK_TIME = 1 / TICK_RATE
+
+def game_loop():
+    while True:
+
+        # process only latest inputs
+        latest_inputs = list(input_buffer)
+
+        for input in latest_inputs:
+            process_input(input)
+
+        simulate_world()
+        broadcast_state()
+
+        sleep(TICK_TIME)from collections import deque
 
 input_buffer = deque(maxlen=10)
 
