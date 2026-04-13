@@ -1,4 +1,43 @@
-Login → Auth Service → Matchmaking Queue → Game Server Instance →
+fps-platform-backend/
+│
+├── apps/
+│   ├── gateway/
+│   │   └── main.py
+│   │
+│   ├── auth_service/
+│   │   └── main.py
+│   │
+│   ├── matchmaking_service/
+│   │   └── main.py
+│   │
+│   ├── game_service/
+│   │   └── main.py
+│   │
+│   ├── anti_cheat_service/
+│   │   └── main.py
+│   │
+│   ├── tournament_service/
+│   │   └── main.py
+│   │
+│   ├── leaderboard_service/
+│       └── main.py
+│
+├── shared/
+│   ├── models.py
+│   ├── security.py
+│   ├── config.py
+│   └── utils.py
+│
+├── infra/
+│   ├── docker-compose.yml
+│   ├── nginx.conf
+│
+├── db/
+│   ├── schema.sql
+│
+├── requirements.txt
+├── README.md
+└── .env.exampleLogin → Auth Service → Matchmaking Queue → Game Server Instance →
 Real-time WebSocket Gameplay → Anti-Cheat Analysis →
 Replay Logging → MMR Update → Leaderboard Updateversion: "3"
 
