@@ -1,4 +1,20 @@
-app/
+from fastapi import FastAPI, Request
+from app.gateway.router import route_request
+from app.gateway.security import verify_request
+
+app = FastAPI(title="API Gateway")
+
+@app.middleware("http")
+async def gateway_middleware(request: Request, call_next):
+
+    # 1. SECURITY CHECK
+    if not verify_request(request):
+        return {"error": "blocked by gateway"}
+
+    # 2. ROUTE REQUEST
+    response = await call_next(request)
+
+    return responseapp/
   gateway/
     main.py
     auth_middleware.py
