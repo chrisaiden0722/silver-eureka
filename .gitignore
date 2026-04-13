@@ -1,4 +1,12 @@
-Bronze
+def update_rank(mmr):
+    if mmr < 1000:
+        return "Silver"
+    elif mmr < 1500:
+        return "Gold"
+    elif mmr < 2000:
+        return "Platinum"
+    else:
+        return "Diamond+"Bronze
 Silver
 Gold
 Platinum
