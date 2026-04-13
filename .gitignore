@@ -1,4 +1,20 @@
-Target target = hit.transform.GetComponent<Target>();
+using Mirror;
+
+public void TakeDamage(float amount, NetworkIdentity attacker)
+{
+    health -= amount;
+
+    if (health <= 0f)
+    {
+        PlayerStats stats = GetComponent<PlayerStats>();
+        if (stats != null)
+        {
+            stats.TakeDamage(0, attacker);
+        }
+
+        NetworkServer.Destroy(gameObject);
+    }
+}Target target = hit.transform.GetComponent<Target>();
 
 if (target != null)
 {
