@@ -1,4 +1,17 @@
-[Top Left]   Player Name
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerHUD : MonoBehaviour
+{
+    public Slider healthBar;
+    public int health = 100;
+
+    public void TakeDamage(int dmg)
+    {
+        health -= dmg;
+        healthBar.value = health;
+    }
+}[Top Left]   Player Name
 [Top Right]  Score / Kills
 
 [Center]     Crosshair
