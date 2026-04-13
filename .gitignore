@@ -1,4 +1,4 @@
-Package Name: com.yourname.yourgame
+yourgame.aabPackage Name: com.yourname.yourgame
 Version: 1.0
 Version Code: 1public AudioSource clickSound;
 
