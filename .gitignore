@@ -1,4 +1,12 @@
-Client → “I shot”
+TICK_RATE = 60
+TICK_TIME = 1 / TICK_RATE
+
+while True:
+    process_inputs()
+    simulate_world()
+    resolve_combat()
+    broadcast_state()
+    sleep(TICK_TIME)Client → “I shot”
 Server → “Let me verify”
 Server → “Hit confirmed / denied”USA stadium
 Europe stadium
