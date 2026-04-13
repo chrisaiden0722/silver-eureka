@@ -1,4 +1,9 @@
-import logging
+def detect_abuse(ip):
+
+    if ip in BLOCKED_IPS:
+        return True
+
+    return Falseimport logging
 
 logging.basicConfig(level=logging.INFO)
 
