@@ -1,4 +1,9 @@
-def apply_penetration(bullet, material):
+def check_hit(bullet, players):
+    for player in players:
+
+        if intersects(bullet.pos, player.hitbox):
+            return player
+    return Nonedef apply_penetration(bullet, material):
     resistance = MATERIALS[material]["resistance"]
 
     bullet.damage *= (1 - resistance)
