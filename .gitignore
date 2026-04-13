@@ -1,4 +1,19 @@
-NA match ≠ EU match
+Player connects
+   ↓
+Geo routing selects region
+   ↓
+Kubernetes assigns game pod
+   ↓
+Match starts
+   ↓
+Tick system runs:
+    - movement
+    - bullet physics
+    - penetration
+    - bone hits
+    - lag compensation
+   ↓
+State sync to clientsNA match ≠ EU match
 
 BUT:
 MMR updates → global databaseapiVersion: apps/v1
