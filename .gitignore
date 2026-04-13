@@ -1,4 +1,9 @@
-from slowapi import Limiter
+@app.exception_handler(RateLimitExceeded)
+def rate_limit_handler(request: Request, exc):
+    return JSONResponse(
+        status_code=429,
+        content={"error": "Too many requests - slow down"}
+    )from slowapi import Limiter
 from slowapi.util import get_remote_address
 from fastapi import FastAPI, Request
 from slowapi.errors import RateLimitExceeded
