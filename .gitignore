@@ -1,4 +1,16 @@
-GitHub Push → Build → Test → Docker Build → Kubernetes Deploy → RolloutGame Event → Queue → Anti-Cheat → Analytics → Leaderboard UpdaterateLimit:
+name: Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: docker build -t fps-backend .
+      - run: kubectl apply -f k8s/GitHub Push → Build → Test → Docker Build → Kubernetes Deploy → RolloutGame Event → Queue → Anti-Cheat → Analytics → Leaderboard UpdaterateLimit:
   requestsPerMinute: 120
   burst: 20th python:3.11
 
