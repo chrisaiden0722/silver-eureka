@@ -1,4 +1,7 @@
-Developer pushes code
+Player → AWS Load Balancer → Kubernetes → Services
+                           ↑
+                        ArgoCD
+                    (auto updates everything)Developer pushes code
         ↓
 GitHub updates repo
         ↓
