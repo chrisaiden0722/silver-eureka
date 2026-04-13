@@ -1,4 +1,14 @@
-@app.post("/matchmaking/join")
+@app.websocket("/game/ws/{match_id}")
+async def game_ws(websocket, match_id: str):
+    await websocket.accept()
+
+    while True:
+        data = await websocket.receive_json()
+
+        # basic spam protection logic
+        if len(str(data)) > 500:
+            await websocket.close()
+            break@app.post("/matchmaking/join")
 @limiter.limit("10/minute")
 def join_queue(request: Request, player_id: str):
     return {"status": "queued"}@app.post("/auth/login")
