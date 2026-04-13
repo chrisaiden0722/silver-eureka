@@ -1,4 +1,12 @@
-inputs + tick states + events = perfect replayFAST LAYER → real-time checks (cheap)
+Game Server (authoritative)
+      ↓
+Event Recorder
+      ↓
+Replay Storage (compressed tick log)
+      ↓
+Replay Engine (deterministic re-simulation)
+      ↓
+Investigation Tools (UI + analytics)inputs + tick states + events = perfect replayFAST LAYER → real-time checks (cheap)
 BEHAVIOR LAYER → scoring system (medium cost)
 ANALYSIS LAYER → async deep inspection (heavy, isolated)suspect_event
    ↓
