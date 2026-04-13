@@ -1,4 +1,11 @@
-Bullet travels → loses energy → penetrates materials → may hit multiple targetsClient shoots
+class Bullet:
+    def __init__(self, pos, dir, velocity, damage, penetration_power):
+        self.pos = pos
+        self.dir = dir
+        self.velocity = velocity
+        self.damage = damage
+        self.penetration = penetration_power
+        self.alive = TrueBullet travels → loses energy → penetrates materials → may hit multiple targetsClient shoots
    ↓
 Server receives shot packet
    ↓
