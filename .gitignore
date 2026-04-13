@@ -1,4 +1,9 @@
-public AudioSource gunSound;
+public float recoilAmount = 2f;
+
+void Shoot()
+{
+    fpsCam.transform.localRotation *= Quaternion.Euler(-recoilAmount, 0f, 0f);
+}public AudioSource gunSound;
 
 void Shoot()
 {
