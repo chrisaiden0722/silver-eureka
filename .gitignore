@@ -1,4 +1,10 @@
-def verify_token(token: str):
+@app.post("/secure/action")
+def secure_action(token: str):
+
+    if not verify_token(token):
+        return {"error": "unauthorized"}
+
+    return {"status": "ok"}def verify_token(token: str):
     return token is not None and len(token) > 5from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
