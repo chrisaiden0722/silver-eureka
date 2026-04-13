@@ -1,4 +1,9 @@
-cheat_flags = {}
+import time
+from collections import defaultdict, deque
+
+cheat_flags = defaultdict(deque)
+BAN_THRESHOLD = 5
+TIME_WINDOW = 60  # secondscheat_flags = {}
 
 def flag_player(player_id):
     cheat_flags[player_id] = cheat_flags.get(player_id, 0) + 1
