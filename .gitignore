@@ -1,4 +1,6 @@
-def flag_player(player_id, reason="unknown"):
+speed_hack
+invalid_shot
+packet_spamdef flag_player(player_id, reason="unknown"):
     now = time.time()
 
     # store timestamp + reason
