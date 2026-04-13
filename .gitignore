@@ -1,4 +1,22 @@
-# FPS Competitive Backend
+[ Admin Dashboard ]
+                         ↓
+        ┌────────────────────────────────┐
+        │        LIVE OPS CORE           │
+        │--------------------------------│
+        │ Feature Flags                  │
+        │ Remote Config                 │
+        │ Events System                 │
+        │ Player Moderation             │
+        │ Economy Control               │
+        │ Match Monitoring              │
+        └────────────────────────────────┘
+                         ↓
+     ┌────────────────────────────────────┐
+     │     GAME + BACKEND SERVICES        │
+     │ (Matchmaking / Game / Anti-Cheat)  │
+     └────────────────────────────────────┘
+                         ↓
+           Metrics + Logs + Analytics# FPS Competitive Backend
 
 ## Features
 - Matchmaking system
