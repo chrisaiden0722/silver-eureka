@@ -1,4 +1,10 @@
-resource "aws_ecr_repository" "game_service" {
+output "cluster_endpoint" {
+  value = module.eks.cluster_endpoint
+}
+
+output "alb_dns" {
+  value = aws_lb.api.dns_name
+}resource "aws_ecr_repository" "game_service" {
   name = "game-service"
 }resource "aws_ecr_repository" "game_service" {
   name = "game-service"
