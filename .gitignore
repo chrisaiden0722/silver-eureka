@@ -1,4 +1,19 @@
-attacker.GetComponent<PlayerXP>()?.AddXP(100);using Mirror;
+using UnityEngine;
+
+public class UnlockSystem : MonoBehaviour
+{
+    public PlayerXP playerXP;
+
+    public bool HasSniper()
+    {
+        return playerXP.level >= 5;
+    }
+
+    public bool HasShotgun()
+    {
+        return playerXP.level >= 3;
+    }
+}attacker.GetComponent<PlayerXP>()?.AddXP(100);using Mirror;
 using UnityEngine;
 
 public class PlayerXP : NetworkBehaviour
