@@ -1,4 +1,24 @@
-kubectl create namespace argocd
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fps-platform
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/YOUR_ORG/fps-multiplayer-backend
+    targetRevision: main
+    path: infra/k8s/base
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: fps
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: truekubectl create namespace argocd
 
 kubectl apply -n argocd \
   -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yamlinfra/
