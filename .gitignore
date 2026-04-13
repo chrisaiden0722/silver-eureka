@@ -1,4 +1,6 @@
-eksctl create cluster --name fps-na
+api.fps-game.com
+   ↓
+Route 53 decides regioneksctl create cluster --name fps-na
 eksctl create cluster --name fps-eu
 eksctl create cluster --name fps-asiaPlayer
   ↓
