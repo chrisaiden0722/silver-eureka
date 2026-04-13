@@ -1,4 +1,6 @@
-suspect_event
+FAST LAYER → real-time checks (cheap)
+BEHAVIOR LAYER → scoring system (medium cost)
+ANALYSIS LAYER → async deep inspection (heavy, isolated)suspect_event
    ↓
 increase_score
    ↓
