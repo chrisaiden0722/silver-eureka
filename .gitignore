@@ -1,4 +1,31 @@
+using Mirror;
 using UnityEngine;
+
+public class PlayerXP : NetworkBehaviour
+{
+    [SyncVar] public int xp = 0;
+    [SyncVar] public int level = 1;
+
+    public void AddXP(int amount)
+    {
+        if (!isServer) return;
+
+        xp += amount;
+
+        if (xp >= level * 500)
+        {
+            xp = 0;
+            level++;
+            RpcLevelUp(level);
+        }
+    }
+
+    [ClientRpc]
+    void RpcLevelUp(int newLevel)
+    {
+        Debug.Log("LEVEL UP! " + newLevel);
+    }
+}using UnityEngine;
 using UnityEngine.UI;
 using Mirror;
 using System.Linq;
