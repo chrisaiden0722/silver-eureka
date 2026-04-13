@@ -1,4 +1,7 @@
-from fastapi import FastAPI
+/register
+/login
+/verify
+/profilefrom fastapi import FastAPI
 
 app = FastAPI()
 
