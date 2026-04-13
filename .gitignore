@@ -1,4 +1,11 @@
-Client predicted position ≠ Server position
+Client:
+  I am at (x=10)
+
+Server:
+  You are actually at (x=8)
+
+Client:
+  Smooth correction appliedClient predicted position ≠ Server position
 → correction sentdef predict_movement(input, state):
     state.position += input.direction * state.speed
     return stateTICK_RATE = 60
