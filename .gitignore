@@ -1,4 +1,10 @@
-using UnityEngine;
+[Top Left]   Player Name
+[Top Right]  Score / Kills
+
+[Center]     Crosshair
+
+[Bottom Left] Health Bar
+[Bottom Right] Ammo Countusing UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
