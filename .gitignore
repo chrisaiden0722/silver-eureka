@@ -1,4 +1,6 @@
-def check_bone_hit(ray_origin, ray_dir, player):
+def apply_damage(base_damage, bone):
+    multiplier = BONE_MULTIPLIERS.get(bone, 1.0)
+    return base_damage * multiplierdef check_bone_hit(ray_origin, ray_dir, player):
     for bone_name, hitbox in player.hitbox.bones.items():
 
         if hitbox.intersects(ray_origin, ray_dir):
