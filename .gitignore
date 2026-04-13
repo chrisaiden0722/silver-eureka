@@ -1,4 +1,8 @@
-from fastapi import FastAPI, WebSocket
+ws.Send(JsonUtility.ToJson(new {
+    type = "move",
+    pos = transform.position,
+    player_id = id
+}));from fastapi import FastAPI, WebSocket
 
 app = FastAPI()
 
