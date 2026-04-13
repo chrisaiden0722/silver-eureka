@@ -1,4 +1,13 @@
-NA Cluster   → North America players
+GitHub (Single Source of Truth)
+                              ↓
+                        ArgoCD Control Plane
+                              ↓
+        ┌──────────────┬──────────────┬──────────────┐
+        │              │              │              │
+   NA Cluster      EU Cluster     ASIA Cluster   (Kubernetes)
+        │              │              │
+   Game Services  Game Services  Game Services
+   Matchmaking    Matchmaking    MatchmakingNA Cluster   → North America players
 EU Cluster   → Europe players
 ASIA Cluster → Asia playersSingle Kubernetes Cluster (BAD for global FPS)Player → AWS Load Balancer → Kubernetes → Services
                            ↑
