@@ -1,4 +1,8 @@
-def flag_player(player_id, reason="unknown"):
+banned_players = set()
+
+def ban_player(player_id, reason):
+    banned_players.add(player_id)
+    print(f"Player {player_id} banned: {reason}")def flag_player(player_id, reason="unknown"):
     print(f"[ANTI-CHEAT] Player {player_id} flagged: {reason}")speed_hack
 invalid_shot
 packet_spamdef flag_player(player_id, reason="unknown"):
