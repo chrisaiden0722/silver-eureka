@@ -1,4 +1,5 @@
-def fast_checks(player):
+player.cheat_score += 1 if suspicious_event else 0
+player.cheat_score *= 0.99  # decaydef fast_checks(player):
     if player.speed > MAX_SPEED:
         return "FLAG_SPEED"
 
