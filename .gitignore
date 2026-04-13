@@ -1,4 +1,44 @@
-IEnumerator RemoveAfterTime(GameObject obj, float time)
+using UnityEngine;
+using UnityEngine.UI;
+using Mirror;
+using System.Linq;
+
+public class ScoreboardUI : MonoBehaviour
+{
+    public GameObject panel;
+    public GameObject rowPrefab;
+    public Transform content;
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            panel.SetActive(true);
+            UpdateBoard();
+        }
+        else
+        {
+            panel.SetActive(false);
+        }
+    }
+
+    void UpdateBoard()
+    {
+        foreach (Transform child in content)
+            Destroy(child.gameObject);
+
+        var players = FindObjectsOfType<PlayerStats>()
+            .OrderByDescending(p => p.kills);
+
+        foreach (var p in players)
+        {
+            GameObject row = Instantiate(rowPrefab, content);
+
+            row.GetComponent<Text>().text =
+                p.name + "  K:" + p.kills + "  D:" + p.deaths;
+        }
+    }
+}IEnumerator RemoveAfterTime(GameObject obj, float time)
 {
     yield return new WaitForSeconds(time - 1f);
 
