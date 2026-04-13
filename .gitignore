@@ -1,4 +1,15 @@
-def check_hit(bullet, players):
+def process_bullet(bullet, players):
+    for player in players:
+
+        if hit_detected(bullet, player):
+
+            apply_damage(player, bullet.damage)
+
+            # reduce energy but continue
+            bullet.penetration -= 1
+
+            if bullet.penetration <= 0:
+                breakdef check_hit(bullet, players):
     for player in players:
 
         if intersects(bullet.pos, player.hitbox):
