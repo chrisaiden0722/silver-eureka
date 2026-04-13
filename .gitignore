@@ -1,4 +1,16 @@
-terraform init
+Terraform Apply
+   ↓
+AWS VPC Created
+   ↓
+Kubernetes Cluster Deployed
+   ↓
+Node Groups Spin Up
+   ↓
+Load Balancer Activated
+   ↓
+ECR Registry Ready
+   ↓
+Backend Services Deployterraform init
 terraform plan
 terraform applyoutput "cluster_endpoint" {
   value = module.eks.cluster_endpoint
