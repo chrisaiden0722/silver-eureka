@@ -1,4 +1,27 @@
-Player1 🔫 Player2if (kills >= 10)
+using UnityEngine;
+using System.Collections;
+
+public class KillFeedManager : MonoBehaviour
+{
+    public GameObject killFeedItemPrefab;
+    public Transform feedParent;
+
+    public void ShowKill(string killer, string victim)
+    {
+        GameObject item = Instantiate(killFeedItemPrefab, feedParent);
+
+        item.GetComponent<UnityEngine.UI.Text>().text =
+            killer + "  🔫  " + victim;
+
+        StartCoroutine(RemoveAfterTime(item, 4f));
+    }
+
+    IEnumerator RemoveAfterTime(GameObject obj, float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(obj);
+    }
+}Player1 🔫 Player2if (kills >= 10)
 {
     Debug.Log("Player Wins!");
 }using UnityEngine;
