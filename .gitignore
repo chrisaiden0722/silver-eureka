@@ -1,4 +1,28 @@
-Player Data → Analytics → Balancing → Feature Flags → Live Updates → Player Experienceserver_metrics = {
+┌────────────────────┐
+                         │   CDN / Edge Layer │
+                         │ (DDoS Protection)  │
+                         └─────────┬──────────┘
+                                   ↓
+                     ┌──────────────────────────┐
+                     │  API Gateway (Kong/Nginx)│
+                     └─────────┬────────────────┘
+                               ↓
+        ┌────────────────────────────────────────────┐
+        │            SERVICE MESH (Istio)            │
+        │--------------------------------------------│
+        │ Auth | Matchmaking | Game | AntiCheat     │
+        │ Leaderboard | Tournament | LiveOps        │
+        └────────────────────────────────────────────┘
+                               ↓
+        ┌────────────────────────────────────────────┐
+        │              DATA LAYER                    │
+        │ PostgreSQL | Redis | Object Storage       │
+        └────────────────────────────────────────────┘
+                               ↓
+        ┌────────────────────────────────────────────┐
+        │   OBSERVABILITY STACK (Monitoring)        │
+        │ Prometheus | Grafana | Loki               │
+        └────────────────────────────────────────────┘Player Data → Analytics → Balancing → Feature Flags → Live Updates → Player Experienceserver_metrics = {
     "active_players": 0,
     "avg_ping": 0,
     "match_load": 0
