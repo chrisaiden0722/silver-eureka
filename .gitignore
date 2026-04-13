@@ -1,4 +1,6 @@
-Player
+eksctl create cluster --name fps-na
+eksctl create cluster --name fps-eu
+eksctl create cluster --name fps-asiaPlayer
   ↓
 GeoDNS (Route 53 / Cloudflare)
   ↓
