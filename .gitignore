@@ -3,6 +3,11 @@ def check_hit(shooter, target, shot_time):
 
     if bullet_intersects(past_state.hitbox):
         return True
+    return Falsedef check_hit(shooter, target, shot_time):
+    past_state = rewind(target, shot_time)
+
+    if bullet_intersects(past_state.hitbox):
+        return True
     return FalseLast 200ms of player positionsClient:
   I am at (x=10)
 
