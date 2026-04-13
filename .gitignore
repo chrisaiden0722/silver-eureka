@@ -1,5 +1,8 @@
 spec:
   destination:
+    server: https://ASIA_K8S_API_SERVER
+    namespace: fps-asiaspec:
+  destination:
     server: https://EU_K8S_API_SERVER
     namespace: fps-euapiVersion: argoproj.io/v1alpha1
 kind: Application
