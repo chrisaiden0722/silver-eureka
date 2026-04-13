@@ -1,4 +1,11 @@
-import time
+import httpx
+
+SERVICES = {
+    "/auth": "http://auth-service:8001",
+    "/matchmaking": "http://matchmaking-service:8002",
+    "/game": "http://game-service:8003",
+    "/leaderboard": "http://leaderboard-service:8004",
+}import time
 from collections import defaultdict
 
 requests = defaultdict(list)
