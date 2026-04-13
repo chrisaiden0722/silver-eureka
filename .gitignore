@@ -1,4 +1,10 @@
-reaction_times = {}
+game_replay_log = []
+
+def log_event(event):
+    game_replay_log.append({
+        "t": time.time(),
+        "event": event
+    })reaction_times = {}
 
 def track_reaction(player_id, shot_time, target_seen_time):
     rt = shot_time - target_seen_time
