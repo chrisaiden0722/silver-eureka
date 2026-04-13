@@ -1,4 +1,18 @@
-Server sends:
+Client Input
+   ↓ (compressed binary packet)
+WebSocket
+   ↓
+Sequence Validation
+   ↓
+Tick Buffer (60/s)
+   ↓
+Simulation Engine
+   ↓
+Delta Compression
+   ↓
+Selective Broadcast
+   ↓
+Client Prediction + ReconciliationServer sends:
 t = 100ms, t = 120ms
 
 Client renders:
