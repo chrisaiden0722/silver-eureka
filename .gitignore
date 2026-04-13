@@ -1,4 +1,4 @@
-Shoot → instant hit checkdef check_hit(shooter, target, shot_time):
+Bullet moves each tickShoot → instant hit checkdef check_hit(shooter, target, shot_time):
     past_state = rewind(target, shot_time)
 
     if bullet_intersects(past_state.hitbox):
