@@ -1,4 +1,4 @@
-Client
+[seq_id][timestamp][input_flags][x][y][angle]Client
   ↓
 WebSocket (binary packets)
   ↓
