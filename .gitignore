@@ -1,4 +1,4 @@
-syncPolicy:
+http://ARGOCD_SERVERsyncPolicy:
   automated:
     prune: true
     selfHeal: truegit push origin maindocker build
