@@ -1,4 +1,8 @@
-from fastapi import FastAPI
+class Player:
+    def __init__(self, id):
+        self.id = id
+        self.mmr = 1000
+        self.banned = Falsefrom fastapi import FastAPI
 
 app = FastAPI()
 
