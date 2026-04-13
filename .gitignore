@@ -1,4 +1,11 @@
-[ Unity Client ]
+def calculate_mmr_change(winner_mmr, loser_mmr):
+    K = 32
+
+    expected_win = 1 / (1 + 10 ** ((loser_mmr - winner_mmr) / 400))
+
+    change = K * (1 - expected_win)
+
+    return change[ Unity Client ]
                  ↓
         WebSocket Gateway Layer
                  ↓
