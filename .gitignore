@@ -1,4 +1,13 @@
-public GameObject impactEffect;
+public AudioSource gunSound;
+
+void Shoot()
+{
+    gunSound.Play();
+    muzzleFlash.Play();
+    currentAmmo--;
+
+    // rest of code...
+}public GameObject impactEffect;
 
 void Shoot()
 {
