@@ -1,4 +1,8 @@
-┌────────────────────┐
+Game Cluster:
+  - matchmaking pods
+  - game server pods
+  - anti-cheat pods
+  - tournament pods┌────────────────────┐
                          │   CDN / Edge Layer │
                          │ (DDoS Protection)  │
                          └─────────┬──────────┘
