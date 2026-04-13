@@ -1,4 +1,9 @@
-match_stream = []
+{
+  "time": 12.5,
+  "event": "kill",
+  "killer": 1,
+  "victim": 3
+}match_stream = []
 
 def log_event(event):
     match_stream.append(event)spectators = {}
