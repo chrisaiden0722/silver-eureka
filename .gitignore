@@ -1,4 +1,5 @@
-speed_hack
+def flag_player(player_id, reason="unknown"):
+    print(f"[ANTI-CHEAT] Player {player_id} flagged: {reason}")speed_hack
 invalid_shot
 packet_spamdef flag_player(player_id, reason="unknown"):
     now = time.time()
