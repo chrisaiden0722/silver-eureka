@@ -1,4 +1,21 @@
+using UnityEngine;
 using Mirror;
+using System.Linq;
+
+public class Scoreboard : MonoBehaviour
+{
+    void Update()
+    {
+        var players = FindObjectsOfType<PlayerStats>();
+
+        var sorted = players.OrderByDescending(p => p.kills);
+
+        foreach (var p in sorted)
+        {
+            Debug.Log(p.name + " K:" + p.kills + " D:" + p.deaths);
+        }
+    }
+}using Mirror;
 
 public void TakeDamage(float amount, NetworkIdentity attacker)
 {
