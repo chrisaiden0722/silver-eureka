@@ -1,4 +1,19 @@
-Client Request
+┌──────────────────────┐
+                │   AWS API Gateway    │
+                │ (Auth + Rate Limit)  │
+                └─────────┬────────────┘
+                          ↓
+                ┌──────────────────────┐
+                │  Kubernetes Ingress  │
+                │ (NGINX / ALB Ingress)│
+                └─────────┬────────────┘
+                          ↓
+     ┌────────────────────────────────────────┐
+     │          Kubernetes Cluster            │
+     │----------------------------------------│
+     │ Auth | Matchmaking | Game | AntiCheat │
+     │ Leaderboard | Tournament | LiveOps    │
+     └────────────────────────────────────────┘Client Request
    ↓
 API Gateway
    ├── Rate Limit Check
