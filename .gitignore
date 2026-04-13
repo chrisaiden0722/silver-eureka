@@ -1,4 +1,11 @@
-{
+Bronze
+Silver
+Gold
+Platinum
+Diamond
+Elite
+Pro
+Champion{
   "time": 12.5,
   "event": "kill",
   "killer": 1,
