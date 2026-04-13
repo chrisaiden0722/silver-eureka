@@ -1,4 +1,14 @@
-NA cluster (us-east-1)
+Player
+  ↓
+GeoDNS (Route 53 / Cloudflare)
+  ↓
+Nearest Region Load Balancer
+  ↓
+Regional Kubernetes Cluster
+  ↓
+Matchmaking Service
+  ↓
+Game Server PodsNA cluster (us-east-1)
 EU cluster (eu-west-1)
 ASIA cluster (ap-southeast-1)Player
  ↓
