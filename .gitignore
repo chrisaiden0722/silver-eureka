@@ -1,4 +1,6 @@
-def calculate_mmr_change(winner_mmr, loser_mmr):
+def update_ranks(winner, loser):
+    winner.mmr += calculate_mmr_change(winner.mmr, loser.mmr)
+    loser.mmr -= calculate_mmr_change(winner.mmr, loser.mmr)def calculate_mmr_change(winner_mmr, loser_mmr):
     K = 32
 
     expected_win = 1 / (1 + 10 ** ((loser_mmr - winner_mmr) / 400))
