@@ -1,4 +1,28 @@
-if (unlockSystem.HasSniper())
+using UnityEngine;
+using System.Collections;
+
+public class FadeIn : MonoBehaviour
+{
+    CanvasGroup cg;
+
+    void Start()
+    {
+        cg = GetComponent<CanvasGroup>();
+        StartCoroutine(Fade());
+    }
+
+    IEnumerator Fade()
+    {
+        float t = 0;
+
+        while (t < 1)
+        {
+            t += Time.deltaTime;
+            cg.alpha = t;
+            yield return null;
+        }
+    }
+}if (unlockSystem.HasSniper())
 {
     // allow weapon switch
 }using UnityEngine;
