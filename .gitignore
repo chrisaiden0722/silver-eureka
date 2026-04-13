@@ -1,4 +1,7 @@
-apiVersion: apps/v1
+NA match ≠ EU match
+
+BUT:
+MMR updates → global databaseapiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fps-game-server
