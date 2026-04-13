@@ -1,4 +1,36 @@
-Namespace: fps-platform
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fps-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /auth
+        pathType: Prefix
+        backend:
+          service:
+            name: auth-service
+            port:
+              number: 8000
+
+      - path: /matchmaking
+        pathType: Prefix
+        backend:
+          service:
+            name: matchmaking-service
+            port:
+              number: 8000
+
+      - path: /game
+        pathType: Prefix
+        backend:
+          service:
+            name: game-service
+            port:
+              number: 8000Namespace: fps-platform
 
 Deployments:
   - auth-service
