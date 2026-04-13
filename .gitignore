@@ -1,4 +1,11 @@
-def server_tick(self):
+def assign_region(player_ping):
+
+    if player_ping < 80:
+        return "NA"
+    elif player_ping < 150:
+        return "EU"
+    else:
+        return "ASIA"def server_tick(self):
 
     # 1. Process inputs (UDP-like layer)
     inputs = self.net.collect_inputs()
