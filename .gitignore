@@ -1321,6 +1321,11 @@ public class LoginUI : MonoBehaviour
     }
 }nup()
     {
-        api.Signup(usernameInput.text, passwordInput.text);
+        api.Signupreplay_store = {}
+
+def save_event(match_id, event):
+    if match_id not in replay_store:
+        replay_store[match_id] = []
+    replay_store[match_id].append(event)(usernameInput.text, passwordInput.text);
     }
 }
