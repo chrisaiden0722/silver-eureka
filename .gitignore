@@ -1,4 +1,8 @@
-Client: I moved forward
+def reconcile(client_state, server_state):
+    error = distance(client_state, server_state)
+
+    if error > threshold:
+        smooth_correction()Client: I moved forward
 Server: confirms 120ms laterdef get_relevant_state(player):
     return {
         "nearby_players": [],
