@@ -1,4 +1,7 @@
-using UnityEngine;
+if (kills >= 10)
+{
+    Debug.Log("Player Wins!");
+}using UnityEngine;
 using Mirror;
 using System.Linq;
 
