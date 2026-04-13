@@ -1,4 +1,16 @@
-import time
+def flag_player(player_id, reason="unknown"):
+    now = time.time()
+
+    # store timestamp + reason
+    cheat_flags[player_id].append((now, reason))
+
+    # remove old flags outside time window
+    while cheat_flags[player_id] and now - cheat_flags[player_id][0][0] > TIME_WINDOW:
+        cheat_flags[player_id].popleft()
+
+    # check active flags
+    if len(cheat_flags[player_id]) >= BAN_THRESHOLD:
+        ban_player(player_id, reason="too many violations")import time
 from collections import defaultdict, deque
 
 cheat_flags = defaultdict(deque)
