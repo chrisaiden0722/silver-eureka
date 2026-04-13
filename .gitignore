@@ -1,4 +1,16 @@
-GitHub (Single Source of Truth)
+gitops/
+  clusters/
+    na/
+      application.yaml
+    eu/
+      application.yaml
+    asia/
+      application.yaml
+
+  base/
+    auth.yaml
+    matchmaking.yaml
+    game.yamlGitHub (Single Source of Truth)
                               ↓
                         ArgoCD Control Plane
                               ↓
