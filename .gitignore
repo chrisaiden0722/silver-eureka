@@ -1,4 +1,13 @@
-def advance_round(winners):
+spectators = {}
+
+@app.post("/spectate")
+def spectate(match_id: str, player_id: str):
+    if match_id not in spectators:
+        spectators[match_id] = []
+
+    spectators[match_id].append(player_id)
+
+    return {"status": "spectating"}def advance_round(winners):
     return generate_bracket(winners)def advance_round(winners):
     return generate_bracket(winners)def generate_bracket(players):
     import random
