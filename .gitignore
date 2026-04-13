@@ -1,4 +1,4 @@
-recoilPattern = new Vector2[]
+fpsCam.transform.localRotation *= Quaternion.Euler(-2f, 0f, 0f);recoilPattern = new Vector2[]
 {
     new Vector2(0.5f, 1.0f)
 };recoilPattern = new Vector2[]
