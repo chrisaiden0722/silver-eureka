@@ -1,4 +1,15 @@
-def lag_compensated_hit(shooter, target, shot_time):
+def process_shots():
+    for shot in pending_shots:
+
+        bone = check_bone_hit(
+            shot.origin,
+            shot.direction,
+            get_rewound_player(shot.target, shot.time)
+        )
+
+        if bone:
+            damage = apply_damage(shot.damage, bone)
+            apply_to_player(shot.target, damage)def lag_compensated_hit(shooter, target, shot_time):
     past_state = rewind_player(target, shot_time)
 
     bone = check_bone_hit(
