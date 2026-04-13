@@ -1,4 +1,5 @@
 def advance_round(winners):
+    return generate_bracket(winners)def advance_round(winners):
     return generate_bracket(winners)def generate_bracket(players):
     import random
     random.shuffle(players)
