@@ -1,4 +1,4 @@
-@app.post("/secure/action")
+Client → Services (unsafe direct access)@app.post("/secure/action")
 def secure_action(token: str):
 
     if not verify_token(token):
