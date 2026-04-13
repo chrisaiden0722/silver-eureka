@@ -1,4 +1,11 @@
-recoil.ResetRecoil();recoil.ApplyRecoil();using UnityEngine;
+recoilPattern = new Vector2[]
+{
+    new Vector2(0.1f, 0.5f),
+    new Vector2(-0.1f, 0.6f),
+    new Vector2(0.15f, 0.7f),
+    new Vector2(-0.2f, 0.8f),
+    new Vector2(0.2f, 1.0f)
+};recoil.ResetRecoil();recoil.ApplyRecoil();using UnityEngine;
 
 public class Recoil : MonoBehaviour
 {
