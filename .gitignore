@@ -1,4 +1,9 @@
-Δx = +0.2
+def get_relevant_state(player):
+    return {
+        "nearby_players": [],
+        "bullets": [],
+        "events": []
+    }Δx = +0.2
 Δy = -0.1player = {x: 100, y: 200, health: 90}TICK_RATE = 60
 TICK_TIME = 1 / TICK_RATE
 
