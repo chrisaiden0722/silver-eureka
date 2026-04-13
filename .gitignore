@@ -1,4 +1,19 @@
-from fastapi import FastAPI
+from fastapi import APIRouter
+
+router = APIRouter(prefix="/auth")
+
+users = {}
+
+@router.post("/register")
+def register(username: str):
+    users[username] = {"mmr": 1000, "banned": False}
+    return {"status": "created"}
+
+@router.post("/login")
+def login(username: str):
+    if username not in users:
+        return {"error": "not found"}
+    return {"token": username}from fastapi import FastAPI
 from app import auth, matchmaking, game, leaderboard, anti_cheat
 
 app = FastAPI(title="FPS Multiplayer Backend")
