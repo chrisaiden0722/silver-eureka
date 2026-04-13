@@ -1,4 +1,18 @@
-@app.websocket("/game/ws/{match_id}")
+from collections import defaultdict
+import time
+
+request_log = defaultdict(list)
+
+def is_spamming(user_id):
+    now = time.time()
+    request_log[user_id].append(now)
+
+    # keep last 10 seconds
+    request_log[user_id] = [
+        t for t in request_log[user_id] if now - t < 10
+    ]
+
+    return len(request_log[user_id]) > 20@app.websocket("/game/ws/{match_id}")
 async def game_ws(websocket, match_id: str):
     await websocket.accept()
 
