@@ -2564,4 +2564,9 @@ def save_event(match_id, event):
         replay_store[match_id] = []
     replay_store[match_id].append(event)(usernameInput.text, passwordInput.text);
     }
-}
+}def compress_state(prev, current):
+    return {
+        "dx": current["x"] - prev["x"],
+        "dy": current["y"] - prev["y"],
+        "dh": current["health"] - prev["health"]
+    }
