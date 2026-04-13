@@ -1,4 +1,19 @@
-Game Server → sends events → Anti-Cheat Service
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.post("/analyze")
+def analyze(event: dict):
+    player_id = event["player_id"]
+
+    if event["type"] == "move":
+        if not check_speed(player_id, event["pos"]):
+            flag(player_id, "speed")
+
+    if event["type"] == "shoot":
+        analyze_aim(player_id, event["aim"], event["enemy_speed"])
+
+    return {"status": "checked"}Game Server → sends events → Anti-Cheat Service
                               ↓
                       Flags / Bans / Logsws.Send(JsonUtility.ToJson(new {
     type = "move",
