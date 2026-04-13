@@ -1,4 +1,7 @@
-@app.post("/auth/login")
+@app.post("/matchmaking/join")
+@limiter.limit("10/minute")
+def join_queue(request: Request, player_id: str):
+    return {"status": "queued"}@app.post("/auth/login")
 @limiter.limit("5/minute")
 def login(request: Request, username: str):
     return {"token": username}@app.exception_handler(RateLimitExceeded)
