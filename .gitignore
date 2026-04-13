@@ -1,4 +1,5 @@
-from fastapi.middleware.cors import CORSMiddleware
+def verify_token(token: str):
+    return token is not None and len(token) > 5from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
