@@ -1,4 +1,5 @@
-game_replay_log = []
+{ "event": "shoot", "player": 1, "pos": [10,2,5] }
+{ "event": "move", "player": 1, "pos": [11,2,5] }game_replay_log = []
 
 def log_event(event):
     game_replay_log.append({
