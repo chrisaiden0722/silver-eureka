@@ -1,4 +1,11 @@
-events_schedule = {
+economy = {
+    "xp_multiplier": 1.0,
+    "weapon_unlock_rate": 1.0
+}
+
+@app.post("/economy/update")
+def update_economy(multiplier: float):
+    economy["xp_multiplier"] = multiplierevents_schedule = {
     "double_xp_weekend": True,
     "sniper_only_mode": False
 }events scheduled = {
