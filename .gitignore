@@ -1,4 +1,15 @@
-version: "3.9"
+# FPS Multiplayer Backend
+
+## Features
+- Authentication system
+- Matchmaking queue
+- Real-time WebSocket game server
+- Basic anti-cheat system
+- Leaderboard system
+
+## Run locally
+
+docker-compose up --buildversion: "3.9"
 
 services:
   backend:
