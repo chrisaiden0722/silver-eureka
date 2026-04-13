@@ -1,4 +1,5 @@
-def can_penetrate(material, bullet):
+def damage_falloff(damage, material):
+    return damage * (1 - MATERIALS[material]["resistance"])def can_penetrate(material, bullet):
     return bullet.penetration > MATERIALS[material]["thickness"]def process_bullet(bullet, players):
     for player in players:
 
