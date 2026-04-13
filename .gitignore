@@ -1,4 +1,7 @@
-def flag_player(player_id, reason):
+players = []
+
+def update_leaderboard():
+    return sorted(players, key=lambda p: p["mmr"], reverse=True)def flag_player(player_id, reason):
     print(f"FLAG: {player_id} - {reason}")/analyze_event
 /flag_player
 /ban_player
