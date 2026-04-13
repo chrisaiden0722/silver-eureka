@@ -1,6 +1,9 @@
 /analyze_event
 /flag_player
 /ban_player
+/get_trust_score/analyze_event
+/flag_player
+/ban_player
 /get_trust_scorefrom fastapi import WebSocket
 
 active_matches = {}
