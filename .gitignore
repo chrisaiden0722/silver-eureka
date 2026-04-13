@@ -1,4 +1,4 @@
-spec:
+Player Location → DNS → Nearest Region Clusterspec:
   destination:
     server: https://ASIA_K8S_API_SERVER
     namespace: fps-asiaspec:
