@@ -1,4 +1,9 @@
-def create_bracket(players):
+class Player:
+    def __init__(self, id):
+        self.id = id
+        self.mmr = 1000
+        self.trust = 100
+        self.banned = Falsedef create_bracket(players):
     import random
     random.shuffle(players)
     return [(players[i], players[i+1]) for i in range(0, len(players), 2)]players = []
