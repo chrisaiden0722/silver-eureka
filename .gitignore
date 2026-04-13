@@ -16,6 +16,24 @@ def server_tick(self):
     self.lag.resolve(self.players)
 
     # 6. Broadcast state (delta compressed)
+    self.net.broadcast_state()def server_tick(self):
+
+    # 1. Process inputs (UDP-like layer)
+    inputs = self.net.collect_inputs()
+
+    # 2. Apply movement prediction correction
+    self.net.reconcile(inputs)
+
+    # 3. Simulate bullets (physics + penetration)
+    self.physics.update(self.bullets)
+
+    # 4. Resolve hits (bone system)
+    self.hitbox.resolve_hits(self.bullets, self.players)
+
+    # 5. Apply lag compensation
+    self.lag.resolve(self.players)
+
+    # 6. Broadcast state (delta compressed)
     self.net.broadcast_state()class GameServer:
     def __init__(self):
         self.tick_rate = 60
