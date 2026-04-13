@@ -1,4 +1,10 @@
-Bullet ray → intersects bone hitboxesclass PlayerHitbox:
+def check_bone_hit(ray_origin, ray_dir, player):
+    for bone_name, hitbox in player.hitbox.bones.items():
+
+        if hitbox.intersects(ray_origin, ray_dir):
+            return bone_name
+
+    return NoneBullet ray → intersects bone hitboxesclass PlayerHitbox:
     def __init__(self):
         self.bones = {
             "HEAD": Sphere(center=(0,1.8,0), radius=0.25),
