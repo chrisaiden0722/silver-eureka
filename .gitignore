@@ -1,4 +1,6 @@
-Client Input
+Which bone was hit?
+→ head / chest / arm / leg
+→ apply damage multiplierClient Input
    ↓ (compressed binary packet)
 WebSocket
    ↓
