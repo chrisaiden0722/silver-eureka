@@ -1,4 +1,16 @@
-render_time = current_time - 100mssnapshot = {
+Client Input
+   ↓
+Server Tick (60/s)
+   ↓
+Validate Movement
+   ↓
+Resolve Shooting (Lag Compensation)
+   ↓
+Update World State
+   ↓
+Send Snapshot
+   ↓
+Client Interpolates + Predictsrender_time = current_time - 100mssnapshot = {
     "players": [...],
     "bullets": [...],
     "time": server_tick
