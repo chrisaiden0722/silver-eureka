@@ -1,4 +1,7 @@
-def server_ray_cast(player_id, direction, match):
+def validate_move(old_pos, new_pos):
+    if distance(old_pos, new_pos) > 10:
+        return False  # speed hack detected
+    return Truedef server_ray_cast(player_id, direction, match):
     """
     Server determines if shot is valid.
     """
