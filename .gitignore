@@ -1,4 +1,21 @@
 from fastapi import APIRouter
+from collections import deque
+
+router = APIRouter(prefix="/matchmaking")
+
+queue = deque()
+
+@router.post("/join")
+def join(player_id: str):
+    queue.append(player_id)
+
+    if len(queue) >= 2:
+        return {
+            "match": [queue.popleft(), queue.popleft()],
+            "status": "started"
+        }
+
+    return {"status": "waiting"}from fastapi import APIRouter
 
 router = APIRouter(prefix="/auth")
 
