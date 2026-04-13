@@ -1,4 +1,12 @@
-Client → Services (unsafe direct access)@app.post("/secure/action")
+Client
+  ↓
+API Gateway (SECURE ENTRY POINT)
+  ↓
+Auth Service
+Matchmaking Service
+Game Service
+Anti-Cheat Service
+Leaderboard ServiceClient → Services (unsafe direct access)@app.post("/secure/action")
 def secure_action(token: str):
 
     if not verify_token(token):
