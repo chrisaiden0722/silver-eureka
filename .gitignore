@@ -1,4 +1,4 @@
-# FPS Multiplayer Backend
+docker-compose up --build# FPS Multiplayer Backend
 
 ## Features
 - Authentication system
