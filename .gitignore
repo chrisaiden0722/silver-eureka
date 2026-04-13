@@ -1,4 +1,17 @@
-from fastapi import APIRouter, WebSocket
+from fastapi import APIRouter
+
+router = APIRouter(prefix="/anticheat")
+
+flags = {}
+
+@router.post("/flag")
+def flag(player_id: str, reason: str):
+    flags[player_id] = flags.get(player_id, 0) + 1
+
+    if flags[player_id] > 5:
+        return {"banned": True}
+
+    return {"banned": False}from fastapi import APIRouter, WebSocket
 
 router = APIRouter(prefix="/game")
 
