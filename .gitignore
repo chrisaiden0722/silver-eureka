@@ -13,6 +13,19 @@ def update(player_id: str, mmr: int):
 def get_board():
     return sorted(players.items(), key=lambda x: x[1], reverse=True)from fastapi import APIRouter
 
+router = APIRouter(prefix="/leaderboard")
+
+players = {}
+
+@router.post("/update")
+def update(player_id: str, mmr: int):
+    players[player_id] = mmr
+    return {"status": "updated"}
+
+@router.get("/")
+def get_board():
+    return sorted(players.items(), key=lambda x: x[1], reverse=True)from fastapi import APIRouter
+
 router = APIRouter(prefix="/anticheat")
 
 flags = {}
