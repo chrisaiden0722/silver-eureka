@@ -1,4 +1,24 @@
-def verify_match(replay):
+from fastapi import FastAPI, WebSocket
+
+app = FastAPI()
+
+@app.websocket("/ws")
+async def websocket_endpoint(ws: WebSocket):
+    await ws.accept()
+
+    while True:
+        data = await ws.receive_json()
+
+        player_id = data["player_id"]
+
+        # REAL-TIME VALIDATION
+        if data["type"] == "move":
+            check_speed(player_id, data["pos"])
+
+        if data["type"] == "shoot":
+            analyze_aim(player_id, data["aim"], data["target_speed"])
+
+        await ws.send_json({"status": "ok"})def verify_match(replay):
     for event in replay:
         if event["event"] == "move":
             if not check_speed(event["player"], event["pos"]):
