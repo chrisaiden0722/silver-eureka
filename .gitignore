@@ -1,4 +1,15 @@
-DATABASE_URL=postgresql://user:pass@localhost:5432/fps
+# FPS Competitive Backend
+
+## Features
+- Matchmaking system
+- Real-time game server
+- Anti-cheat system
+- Tournament system
+- Leaderboards
+
+## Run locally
+
+docker-compose up --buildDATABASE_URL=postgresql://user:pass@localhost:5432/fps
 JWT_SECRET=supersecretDATABASE_URL=postgresql://user:pass@localhost:5432/fps
 JWT_SECRET=supersecretfastapi
 uvicorn
