@@ -1,4 +1,16 @@
-import hashlib
+[ Unity Client ]
+      ↓
+[ Matchmaking / Tournament API ]
+      ↓
+[ Dedicated Match Server ]
+      ↓
+[ Anti-Cheat Service ]
+      ↓
+[ Replay System ]
+      ↓
+[ Leaderboard + Season System ]
+      ↓
+[ Spectator Broadcast Layer ]import hashlib
 
 def sign_result(match_data):
     return hashlib.sha256(str(match_data).encode()).hexdigest()Register → Bracket Generated → Matches Start → Winners Advance → Finals → Champion Crowneddef update_rank(mmr):
