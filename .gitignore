@@ -1,4 +1,94 @@
-async function secureDownload(token) {
+=====================================
+
+SECURE DOWNLOAD GITHUB APP (FULL PROJECT)
+
+Ready to Upload to GitHub & Deploy
+
+=====================================
+
+---------- REQUIREMENTS ----------
+
+pip install fastapi uvicorn python-dotenv pyjwt slowapi aiofiles
+
+---------- FILE: backend/main.py ----------
+
+from fastapi import FastAPI, HTTPException, Request from fastapi.responses import StreamingResponse import os, time, jwt, hashlib from slowapi import Limiter from slowapi.util import get_remote_address
+
+app = FastAPI()
+
+limiter = Limiter(key_func=get_remote_address) app.state.limiter = limiter
+
+SECRET_KEY = os.getenv("SECRET_KEY", "CHANGE_ME") FILE_PATH = "storage/app.zip"
+
+-------- TOKEN --------
+
+def create_token(user_id: str): payload = { "user": user_id, "exp": time.time() + 300 } return jwt.encode(payload, SECRET_KEY, algorithm="HS256")
+
+def verify_token(token: str): try: return jwt.decode(token, SECRET_KEY, algorithms=["HS256"]) except: raise HTTPException(status_code=401, detail="Invalid or expired token")
+
+-------- HASH --------
+
+def file_hash(path): sha = hashlib.sha256() with open(path, "rb") as f: for chunk in iter(lambda: f.read(4096), b""): sha.update(chunk) return sha.hexdigest()
+
+-------- ROUTES --------
+
+@app.get("/") def home(): return {"status": "Secure Download API Running"}
+
+@app.get("/token") def get_token(user: str): return {"token": create_token(user)}
+
+@app.get("/download") @limiter.limit("5/minute") def download(request: Request, token: str): verify_token(token)
+
+if not os.path.exists(FILE_PATH):
+    raise HTTPException(404, "File not found")
+
+checksum = file_hash(FILE_PATH)
+
+def stream():
+    with open(FILE_PATH, "rb") as f:
+        yield from f
+
+res = StreamingResponse(stream(), media_type="application/octet-stream")
+res.headers["X-Checksum-SHA256"] = checksum
+res.headers["Content-Disposition"] = "attachment; filename=app.zip"
+return res
+
+---------- FILE: frontend/index.html ----------
+
+"""
+
+<!DOCTYPE html><html>
+<head>
+  <title>Secure Download</title>
+</head>
+<body>
+  <h2>Secure Download</h2>
+  <button onclick="download()">Download File</button><script>
+async function download(){
+    const tokenRes = await fetch('/token?user=test');
+    const tokenData = await tokenRes.json();
+
+    const res = await fetch(`/download?token=${tokenData.token}`);
+    const checksum = res.headers.get('X-Checksum-SHA256');
+
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'app.zip';
+    a.click();
+
+    console.log('Checksum:', checksum);
+}
+</script></body>
+</html>
+"""---------- FILE: Dockerfile ----------
+
+""" FROM python:3.11
+
+WORKDIR /app COPY . .
+
+RUN pip install fastapi uvicorn python-dotenvasync function secureDownload(token) {
     const res = await fetch(`/download?token=${token}`);
 
     const checksum = res.headers.get("X-Checksum-SHA256");
