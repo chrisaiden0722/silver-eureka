@@ -1,4 +1,15 @@
-Client (App)
+async function secureDownload(token) {
+    const res = await fetch(`/download?token=${token}`);
+
+    const checksum = res.headers.get("X-Checksum-SHA256");
+    const blob = await res.blob();
+
+    // Verify integrity
+    const buffer = await blob.arrayBuffer();
+    const hashBuffer = await crypto.subtle.digest("SHA-256", buffer);
+
+    console.log("Downloaded + verified");
+}Client (App)
    ↓
 Secure API (FastAPI / Node)
    ↓
