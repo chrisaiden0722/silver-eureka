@@ -1,4 +1,21 @@
-from fastapi import FastAPI
+from fastapi import APIRouter, WebSocket
+from app.game.server import GameServer
+
+router = APIRouter()
+game = GameServer()
+
+@router.websocket("/ws")
+async def websocket_endpoint(ws: WebSocket):
+    await ws.accept()
+    player_id = game.add_player(ws)
+
+    try:
+        while True:
+            data = await ws.receive_json()
+            game.handle_input(player_id, data)
+
+    except:
+        game.remove_player(player_id)from fastapi import FastAPI
 from app.websocket import router as ws_router
 
 app = FastAPI()
