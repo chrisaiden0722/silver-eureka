@@ -1,4 +1,12 @@
-from fastapi import APIRouter, WebSocket
+Client (App)
+   ↓
+Secure API (FastAPI / Node)
+   ↓
+Auth Layer (JWT / GitHub OAuth)
+   ↓
+Download Proxy (signed URLs)
+   ↓
+Storage (GitHub Releases / S3 / Private CDN)from fastapi import APIRouter, WebSocket
 from app.game.server import GameServer
 
 router = APIRouter()
