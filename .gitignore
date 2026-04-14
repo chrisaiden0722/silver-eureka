@@ -1,4 +1,13 @@
-Replay = re-run server logic exactlydef record_tick(game_state):
+from fastapi import FastAPI
+from app.websocket import router as ws_router
+
+app = FastAPI()
+
+app.include_router(ws_router)
+
+@app.get("/")
+def root():
+    return {"status": "FPS Backend Running"}Replay = re-run server logic exactlydef record_tick(game_state):
     replay_buffer.append(
         compress(game_state)
     )4move, aim, shoot, jump, reloadGame Server (authoritative)
